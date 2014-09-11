@@ -1,11 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Topic description:</strong>
   <%= @topic.description %>
   
+  <%= @topic.links.each do |link| %>
+ <p> <%= link.description %></p>
+ <p> <%= link.url %></p>
   
-</p>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
+  <% end %>
+  
+<p>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> 
 <%= link_to 'Back', topics_path %>
