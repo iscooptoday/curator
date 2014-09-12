@@ -1,6 +1,7 @@
 class Topic < ActiveRecord::Base
-	has_many:links
-	...
+	
   acts_as_followable
-  ...
+  
+		
+  has_many:links
 end
