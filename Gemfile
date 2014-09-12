@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem "socialization"
+gem 'bootstrap-sass'
 
 group :development, :test do
      gem 'sqlite3'
