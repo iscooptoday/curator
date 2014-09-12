@@ -79,5 +79,5 @@ Curator::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   
   # needed for heroku but change it to url once you got it
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'gibril2.herokuapp.com' }
 end
