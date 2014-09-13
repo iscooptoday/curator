@@ -3,9 +3,14 @@ class TopicsController < ApplicationController
 
   # GET /topics
   # GET /topics.json
+  
   def index
     @topics = Topic.all
   end
+
+  
+   
+  
 
   # GET /topics/1
   # GET /topics/1.json
@@ -17,8 +22,9 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.build
   end
 
-  # GET /topics/1/edit
+  
   def edit
+    
   end
 
   # POST /topics
@@ -40,15 +46,8 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
-    respond_to do |format|
-      if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
-      end
-    end
+      current_user.follow!(@topic)
+       redirect_to @topic, notice: 'you are now following this topic.'
   end
 
   # DELETE /topics/1

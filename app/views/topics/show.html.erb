@@ -3,6 +3,12 @@
 <p>
   <strong>Topic description:</strong>
   <%= @topic.description %>
+
+  <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
+         
+         <div class = "actions"><%= f.submit "follow" %></div>
+
+       <% end %>
   
   <%= @topic.links.each do |link| %>
  <p> <%= link.description %></p>
