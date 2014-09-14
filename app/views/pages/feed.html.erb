@@ -1,7 +1,16 @@
 
+<%= link_to "Find Topics To Follow", topics_path, class: "btn btn-default btn-lg" %>
+
+<div class="container">
 <%= current_user.followees(Topic).each do |t| %>
 <p><%= t.links.each do |l| %></p>
+<div class="feed">
     <%= l.url %> 
   
   <% end %>
-  <% end %>
+  
+
+</div>
+<hr>
+<% end %>
+</div>

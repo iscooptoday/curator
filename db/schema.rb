@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913134008) do
+ActiveRecord::Schema.define(version: 20140914143813) do
 
   create_table "follows", force: true do |t|
     t.string   "follower_type"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20140913134008) do
     t.integer  "topic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url2"
+    t.string   "url3"
+    t.string   "url4"
+    t.string   "url5"
   end
 
   create_table "mentions", force: true do |t|
@@ -59,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140913134008) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "author"
   end
 
   create_table "users", force: true do |t|
@@ -74,6 +79,7 @@ ActiveRecord::Schema.define(version: 20140913134008) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,3 +1,4 @@
+
 <%= form_for(@link) do |f| %>
   <% if @link.errors.any? %>
     <div id="error_explanation">
@@ -12,17 +13,38 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :topic_id %><br>
-    <%= collection_select(:link, :topic_id, @topics, :id, :description, {:prompt => false })  %>
+    <%= f.label :choose_topic_to_submit_to %><br>
+    <%= collection_select(:link, :topic_id, current_user.topics, :id, :description, {:prompt => false })  %><br><br>
   </div>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+  <div class="form-group">
+  <%= f.label :few_word_before_adding_links %>
+  <%= f.text_area :description,placeholder:"what can you say here? i don't know. don't ask me ",class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+  
+  <div class="form-group">
+    <%= f.label :link_5 %>
+    <%= f.text_field :url,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :link_4 %>
+    <%= f.text_field :url2,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :link_3 %>
+    <%= f.text_field :url3,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :link_2 %>
+    <%= f.text_field :url4,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :link_1 %>
+    <%= f.text_field :url5,class: "form-control" %>
   </div>
   
   <div class="actions">
