@@ -1,23 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
   <strong>Topic description:</strong>
   <%= @topic.description %>
 
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
-         
-         <div class = "actions"><%= f.submit "follow" %></div>
-
-       <% end %>
+  <div class = "actions"> <%= f.submit "follow" %> </div>
+  <% end %> 
+    
   
-  <%= @topic.links.each do |link| %>
- <p> <%= link.description %></p>
- <p> <%= link.url %></p>
-  
-
+  <%= @topic.links.each do |l| %>
+   <p><%= l.description %></p>
+   <p><%= l.url %></p>
   <% end %>
+ 
   
-<p>
-
 <%= link_to 'Edit', edit_topic_path(@topic) %> 
 <%= link_to 'Back', topics_path %>
+
+
+
