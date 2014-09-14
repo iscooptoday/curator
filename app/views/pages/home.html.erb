@@ -1,14 +1,19 @@
 
      <div class="jumbotron center">
-     <% if user_signed_in? %>
-          
-     <% else %>
+      <% if user_signed_in? %>
+        
+        <p style="font-family:Open Sans;padding-left:50px">Welcome. Please give feedback to help improve the site for everyone.Thanks and enjoy
+         </p>  
+
+        <%= link_to "enter site", feed_path, class: "btn btn-default btn-lg" %>
+         
+      <% else %>
      
        <p>Curator let's you follow any topic of interest and receive a daily top 10 list about that topic</p>
        <p>Any one can create a topic and start sharing links on a daily basis with followers</p>
         
         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-lg" %>
-          <% end %>  
+          <% end %> 
             </div>  
 

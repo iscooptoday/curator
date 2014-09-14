@@ -1,0 +1,7 @@
+
+<%= current_user.followees(Topic).each do |t| %>
+<p><%= t.links.each do |l| %></p>
+    <%= l.url %> 
+  
+  <% end %>
+  <% end %>
