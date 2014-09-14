@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Topic name:</strong>
+  <strong><%= @link.topic.description %> by <%= @link.topic.author %></strong>
+</p>
+
+<p>
+  
   <%= @link.description %>
 </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @link.url %>
-</p>
+  <p><%= @link.url %></p>
+  <p><%= @link.url2 %></p>
+  <p><%= @link.url3 %></p>
+  <p><%= @link.url4 %></p>
+  <p><%= @link.url5 %></p>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @link.topic.description %>
-</p>
+
+
 
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>

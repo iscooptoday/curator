@@ -1,16 +1,31 @@
 
+<div>
 <%= link_to "Find Topics To Follow", topics_path, class: "btn btn-default btn-lg" %>
+</div><hr>
 
-<div class="container">
-<%= current_user.followees(Topic).each do |t| %>
-<p><%= t.links.each do |l| %></p>
-<div class="feed">
-    <%= l.url %> 
-  
-  <% end %>
-  
 
-</div>
+<% current_user.followees(Topic).each do |t| %>
+
+posted to: <strong><%= t.description %> by <%= t.author %></strong>
+
+<p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"><%= time_ago_in_words(t.created_at) %> ago</p>
+
+<% t.links.each do |l| %>
+<div>
+<p><%= l.description %></p>
+<ol>
+ <li style=font-size:15px > <%= link_to "At number 5 is", l.url,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
+ 
+ <li style=font-size:15px > <%= link_to "At number 4 is", l.url2,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
+
+ <li style=font-size:15px > <%= link_to "At number 3 is", l.url3,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
+
+ <li style=font-size:15px > <%= link_to "At number 2 is", l.url4,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
+
+ <li style=font-size:15px > <%= link_to "At number 1 is", l.url5,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
+ </ol>
+ </div>
+ 
+<% end %>
 <hr>
 <% end %>
-</div>
