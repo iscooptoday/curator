@@ -3,7 +3,6 @@ class TopicsController < ApplicationController
 
   # need to login before doing anything 
   before_action :authenticate_user!
-
  
   
   def index

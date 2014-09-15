@@ -1,0 +1,11 @@
+
+<div>
+<%= link_to "Find Topics To Follow", topics_path, class: "btn btn-default btn-lg" %>
+</div><hr>
+
+<% current_user.followees(Topic).each do |topic| %>
+<%= link_to topic.description, topic_path(topic) %> by 
+ <%= topic.author if topic.author %></p>
+
+
+<% end %>
