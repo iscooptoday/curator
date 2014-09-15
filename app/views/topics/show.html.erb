@@ -2,11 +2,18 @@
 
 
   
-  <h3><%= @topic.description %></h3>
-
+  <h4><%= @topic.description %> by <%= @topic.author %></h4>
+  
+  <% if current_user.follows?(@topic) %>   
+     
+   <% else %>
+  
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
   <div class = "actions"> <%= f.submit "follow" %> </div>
-  <% end %> 
+  <% end %> <br>
+
+<% end %> 
+
     
   
 <% @topic.links.order("created_at DESC").each do |l| %>
