@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem "socialization"
 gem 'bootstrap-sass'
+gem 'rails_12factor'
 
 group :development, :test do
      gem 'sqlite3'
