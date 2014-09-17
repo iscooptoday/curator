@@ -4,12 +4,16 @@
   
   <h4><%= @topic.description %> by <%= @topic.author %></h4>
   
-  <% if current_user.follows?(@topic) %>   
+  <% if current_user.follows?(@topic) %>  
+
+  <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
+  <div class = "actions"> <%= f.submit "Unfollow" %> </div>
+  <% end %> <br> 
      
    <% else %>
   
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
-  <div class = "actions"> <%= f.submit "follow" %> </div>
+  <div class = "actions"> <%= f.submit "Follow" %> </div>
   <% end %> <br>
 
 <% end %> 

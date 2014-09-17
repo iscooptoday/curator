@@ -34,8 +34,15 @@ class TopicsController < ApplicationController
 
   
   def update
+      
+      if current_user.follows?(@topic)
+        current_user.unfollow!(@topic)
+        redirect_to @topic, notice: 'you are no longer following this topic.'
+        else 
+
       current_user.follow!(@topic)
        redirect_to @topic, notice: 'you are now following this topic.'
+  end
   end
 
   
