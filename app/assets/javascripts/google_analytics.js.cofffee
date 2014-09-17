@@ -1,6 +1,6 @@
 class @GoogleAnalytics
 
-  @load: ->
+  load: ->
     
     window._gaq = []
     window._gaq.push ["_setAccount", GoogleAnalytics.analyticsId()]
@@ -22,7 +22,7 @@ class @GoogleAnalytics
     else
       GoogleAnalytics.trackPageview()
 
-  @trackPageview: (url) ->
+  trackPageview: (url) ->
     unless GoogleAnalytics.isLocalRequest()
       if url
         window._gaq.push ["_trackPageview", url]
@@ -30,13 +30,13 @@ class @GoogleAnalytics
         window._gaq.push ["_trackPageview"]
       window._gaq.push ["_trackPageLoadTime"]
 
-  @isLocalRequest: ->
+  isLocalRequest: ->
     GoogleAnalytics.documentDomainIncludes "local"
 
-  @documentDomainIncludes: (str) ->
+  documentDomainIncludes: (str) ->
     document.domain.indexOf(str) isnt -1
 
-  @analyticsId: ->
+  analyticsId: ->
       'UA-53603275-1'
 
 GoogleAnalytics.load()
