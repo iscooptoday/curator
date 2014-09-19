@@ -25,17 +25,9 @@
 <p><%= l.description %></p>
 <p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"><%= time_ago_in_words(l.created_at ) %> ago</p>
 
-<ol>
- <li style=font-size:15px > <%= link_to "At number 1 is", l.url,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
+
+ <p style=font-size:15px > <%= link_to "click to find out about today's episode", l.url,{:style=>'color:#3333D6;',:class => "css_class"} %> </p>
  
- <li style=font-size:15px > <%= link_to "At number 2 is", l.url2,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
-
- <li style=font-size:15px > <%= link_to "At number 3 is", l.url3,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
-
- <li style=font-size:15px > <%= link_to "At number 4 is", l.url4,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
-
- <li style=font-size:15px > <%= link_to "At number 5 is", l.url5,{:style=>'color:#3333D6;',:class => "css_class"} %> </li>
- </ol>
  </div>
   <% end %>
   <hr>
