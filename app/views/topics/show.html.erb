@@ -21,18 +21,21 @@
     
   
 <% @topic.links.order("created_at DESC").each do |l| %>
+
 <div>
-<p><%= l.description %></p>
-<p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"><%= time_ago_in_words(l.created_at ) %> ago</p>
 
-<iframe src= "<%= l.url %>" frameborder="0" style="height: 500px; overflow:scroll; width: 100%" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"></iframe> 
+<p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> posted <%= time_ago_in_words(l.created_at ) %> ago</p>
+
+<p style=font-size:15px > <% link_to "click to view this as a webpage", l.url,{:style=>'color:#3333D6;',:class => "css_class"} %> </p>
+
+</div>
 
 
- <p style=font-size:15px > <% link_to "click for today's issue", l.url,{:style=>'color:#3333D6;',:class => "css_class"} %> </p>
- 
- </div>
-  <% end %>
-  <hr>
+<iframe src= "<%= l.url %>" frameborder="0" style="height: 400px; overflow:scroll; width: 80%" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"></iframe><br><br> 
+
+<hr>
+<% end %>
+
  
   
 
