@@ -14,8 +14,8 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to 'SUBMIT LINKS', new_link_path %></li>
-      <li><%= link_to 'CREATE TOPIC', new_topic_path %></li>
+      <li><%= link_to 'SUBMIT AN ISSUE', new_link_path %></li>
+      <li><%= link_to 'CREATE NEWSLETTER', new_topic_path %></li>
       <li><%= link_to 'CONTACT', contact_path %></li>
       <% if user_signed_in? %>
       <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li> 

@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :topic_name %>
-    <%= f.text_field :description, class: "form-control",placeholder:"eg funniest youtube videos",:autofocus => true %>
+    <%= f.label :Newsletter_Name %>
+    <%= f.text_field :description, class: "form-control",placeholder:"eg daily summaries of my favourite techcrunch articles",:autofocus => true %>
   </div>
 
   <div class="form-group">
@@ -21,8 +21,8 @@
     <%= f.text_field :author, class: "form-control",placeholder:"That would be your name",:autofocus => true %>
   </div>
   
-  <p style="color:red"> by clicking 'create topic' you are agreeing to submit a new issue of your newsletter <b>everyday</b></p>
+  <p style="color:red"> by clicking 'CREATE NEWSLETTER' you are agreeing to submit to iscoop a new issue of your newsletter <b>everyday</b></p>
   <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit "CREATE NEWSLETTER", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :choose_topic_to_submit_to %><br>
+    <%= f.label :choose_newsletter_to_submit_to %><br>
     <%= collection_select(:link, :topic_id, current_user.topics, :id, :description, {:prompt => false })  %><br><br>
   </div>
 
@@ -30,6 +30,6 @@
   
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "SUBMIT ISSUE" %>
   </div>
 <% end %>
