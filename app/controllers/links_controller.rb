@@ -27,7 +27,7 @@ class LinksController < ApplicationController
 
     
       if @link.save
-        redirect_to @link, notice: 'Link was successfully created.' 
+        redirect_to @link, notice: 'issue was successfully submitted.' 
         
       else
         render action: 'new' 
@@ -39,7 +39,7 @@ class LinksController < ApplicationController
   def update
     
       if @link.update(link_params)
-        redirect_to @link, notice: 'Link was successfully updated.' 
+        redirect_to @link, notice: 'issue was successfully updated.' 
       
       else
         render action: 'edit' 
