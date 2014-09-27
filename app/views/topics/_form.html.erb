@@ -1,3 +1,9 @@
+
+
+ 
+<% if current_user.topics.blank? %>
+
+
 <%= form_for(@topic) do |f| %>
   <% if @topic.errors.any? %>
     <div id="error_explanation">
@@ -10,6 +16,7 @@
       </ul>
     </div>
   <% end %>
+
 
   <div class="form-group">
     <%= f.label :Newsletter_Description %>
@@ -25,4 +32,11 @@
   <div class="actions">
     <%= f.submit "CREATE NEWSLETTER", class: "btn btn-primary" %>
   </div>
+<% end %>
+
+
+<% else %>
+
+<p> You can only have one newsletter at a time</p>
+
 <% end %>
