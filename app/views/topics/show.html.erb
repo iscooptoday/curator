@@ -7,13 +7,13 @@
   <% if current_user.follows?(@topic) %>  
 
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
-  <div class = "actions"> <%= f.submit "Unfollow" %> </div>
+  <div class = "actions"> <%= f.submit "UnSubscribe" %> </div>
   <% end %> <br> 
      
    <% else %>
   
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
-  <div class = "actions"> <%= f.submit "Follow" %> </div>
+  <div class = "actions"> <%= f.submit "Subscribe" %> </div>
   <% end %> <br>
 
 <% end %> 
