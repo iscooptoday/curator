@@ -12,6 +12,7 @@ gem 'devise'
 gem "socialization"
 gem 'bootstrap-sass'
 gem 'rails_12factor'
+gem 'paperclip', '~> 3.0'
 
 group :development, :test do
      gem 'sqlite3'
