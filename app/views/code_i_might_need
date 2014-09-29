@@ -1,0 +1,13 @@
+
+#iframe 
+<iframe src= "<%= l.url %>" frameborder="0" style="height: 400px; overflow:scroll; width: 60%" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"></iframe><br><br> 
+
+
+# adding link
+ <div class="form-group">
+    <%= f.label :link %>
+    <%= f.text_field :url,class: "form-control" %>
+  </div>
+
+#view the link
+<p style=font-size:15px > <%= link_to "click to view this as a webpage", l.url,{:style=>'color:#3333D6;',:class => "css_class"} %> </p>

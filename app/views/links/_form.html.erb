@@ -17,22 +17,17 @@
     <%= collection_select(:link, :topic_id, current_user.topics, :id, :description, {:prompt => false })  %><br><br>
   </div>
 
-  <div class="form-group">
-  <% f.label :few_word_before_adding_links %>
-  <% f.text_area :description,placeholder:"what can you say here? i don't know. don't ask me ",class: "form-control" %>
+  
+
+  <div class="form">
+    <%= f.file_field :image %>
   </div>
 
+
   <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image,class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :link %>
-    <%= f.text_field :url,class: "form-control" %>
+  <%= f.text_area :description,placeholder:"don't forget to add images ",class: "form-control" %>
   </div>
 
-  
   
   <div class="actions">
     <%= f.submit "SUBMIT ISSUE" %>

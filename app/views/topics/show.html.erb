@@ -2,18 +2,18 @@
 
 
   
-  <h4><%= @topic.description %> by <%= @topic.author %></h4>
+  
   
   <% if current_user.follows?(@topic) %>  
 
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
-  <div class = "actions"> <%= f.submit "UnSubscribe" %> </div>
+  <div class = "actions"> <%= f.submit "UnFollow" %> </div>
   <% end %> <br> 
      
    <% else %>
   
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
-  <div class = "actions"> <%= f.submit "Subscribe" %> </div>
+  <div class = "actions"> <%= f.submit "Follow" %> </div>
   <% end %> <br>
 
 <% end %> 
@@ -26,21 +26,24 @@
 
 <p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> posted <%= time_ago_in_words(l.created_at ) %> ago</p>
 
-<p style=font-size:15px > <% link_to "click to view this as a webpage", l.url,{:style=>'color:#3333D6;',:class => "css_class"} %> </p>
-
-
 
 </div>
 
+<div class="jumbotron center">
+<%= @topic.author %><br><br>
+<h4 style="color:red"><%= @topic.description %> Newsletter </h4><br><br>
+<div>
 <%= image_tag l.image.url (:medium) %>
+</div><br>
 
-<iframe src= "<%= l.url %>" frameborder="0" style="height: 400px; overflow:scroll; width: 60%" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"></iframe><br><br> 
+<div>
+<p style="color:#7f8c8d;font-weight:bold"><%= l.description %><p>
+</div>
 
-
-
-
+</div>
 
 <hr>
+
 <% end %>
 
  
