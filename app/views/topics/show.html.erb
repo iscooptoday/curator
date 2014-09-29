@@ -7,6 +7,7 @@
   <% if current_user.follows?(@topic) %>  
 
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
+  
   <div class = "actions"> <%= f.submit "UnFollow" %> </div>
   <% end %> <br> 
      
@@ -29,18 +30,24 @@
 
 </div>
 
-<div class="jumbotron center">
-<%= @topic.author %><br><br>
-<h4 style="color:red"><%= @topic.description %> Newsletter </h4><hr>
-<div>
-<%= image_tag l.image.url (:medium) %>
-</div><br>
+<div class="panel panel-default">
 
-<div>
-<p style="color:#7f8c8d;font-weight:bold"><%= l.description %><p>
-</div><hr>
-Thank you for reading my newsletter. come back for the next issue
+<div style="background-color:#34495e;color:white" class="panel-heading"><%= @topic.author %>'s <%= @topic.description %> Newsletter </h4></div><br>
+
+<div class="panel-body">
+<p><%= image_tag l.image.url (:medium) %></p><br>
+<p style="color:#34495e"><%= l.description %></p>
 </div>
+
+
+
+
+
+<div style="background-color:#34495e;color:white" class="panel-footer">Thank you for reading my newsletter. come back for the next issue
+</div>
+
+</div>
+
 
 <hr>
 
