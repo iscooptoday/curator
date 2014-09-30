@@ -19,19 +19,20 @@
 
 <% end %> 
 
+<div>
+
+followers<br>
+<B style="color:blue"><%=@topic.followers(User).count %></B>
+</div><br><br>
     
   
 <% @topic.links.order("created_at DESC").each do |l| %>
 
 <div>
-
 <p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> posted <%= time_ago_in_words(l.created_at ) %> ago</p>
-
-
 </div>
 
 <div class="panel panel-default">
-
 <div style="background-color:#ecf0f1;font-family:verdana" class="panel-heading"> 
 	<p style="font-size:16px"><%= @topic.author %><br>
 	<%= @topic.description %> Newsletter </p> 

@@ -1,0 +1,4 @@
+<h3> My Newsletters </h3>
+<% current_user.topics.each do |topic| %>
+<%= link_to topic.description, topic_path(topic) %> 
+<% end %>
