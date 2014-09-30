@@ -32,7 +32,10 @@
 
 <div class="panel panel-default">
 
-<div style="background-color:#34495e;color:white" class="panel-heading"><%= @topic.author %>'s <%= @topic.description %> Newsletter </h4></div><br>
+<div style="background-color:#34495e;color:white" class="panel-heading"> 
+	<p style="font-size:16px"><%= @topic.author %><br>
+	<%= @topic.description %> Newsletter </p> 
+</div> <br>
 
 <div class="panel-body">
 <p><%= image_tag l.image.url (:medium) %></p><br>
@@ -43,7 +46,7 @@
 
 
 
-<div style="background-color:#34495e;color:white" class="panel-footer">Thank you for reading my newsletter. come back for the next issue
+<div style="background-color:#ecf0f1" class="panel-footer"><p>Thank you for reading my newsletter. Come back for the next issue</p>
 </div>
 
 </div>
