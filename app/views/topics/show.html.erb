@@ -1,5 +1,5 @@
 
-<% if user_signed_in? %>
+
 
 <p id="notice"><%= notice %></p>
 
@@ -62,18 +62,7 @@
 
 <% end %>
 
-<% else %>
 
-<p> Ok login or sign up before following this newsletter. its easy just your email and password</p>
-
-<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
- <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-lg" %>
-
- <% end %>
-
-
- 
-  
 
 
 
