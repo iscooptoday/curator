@@ -1,27 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-
+  <div align="center">
+  <h2> <%=@topic.description %></h2>
+  by <b style="color:red"><%=@topic.author %></b>
+  </div><br><br>
   
-  
+  <p> <%=@topic.welcome_message %></p>
   
   <% if current_user.follows?(@topic) %>  
 
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
   
-  <div class = "actions"> <%= f.submit "UnFollow" %> </div>
+  <div class = "actions"> <%= f.submit "UnFollow", class: "btn btn-default btn-lg" %> </div>
   <% end %> <br> 
      
    <% else %>
   
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
-  <div class = "actions"> <%= f.submit "Follow" %> </div>
+  <div class = "actions"> <%= f.submit "Follow" ,class: "btn btn-default btn-lg" %> </div>
   <% end %> <br>
 
 <% end %> 
 
 <div>
 
-followers<br>
+<h3>followers</h3>
 <B style="color:blue"><%=@topic.followers(User).count %></B>
 </div><br><br>
     
