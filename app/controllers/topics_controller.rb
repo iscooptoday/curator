@@ -59,6 +59,6 @@ class TopicsController < ApplicationController
 
     
     def topic_params
-      params.require(:topic).permit(:description,:author)
+      params.require(:topic).permit(:description,:author,:frequency,:time)
     end
 end

@@ -1,7 +1,7 @@
 
 
  
-<% if current_user.topics.blank? %>
+
 
 
 <%= form_for(@topic) do |f| %>
@@ -24,19 +24,24 @@
   </div>
 
   <div class="form-group">
+       <%= f.label :frequency %>
+       <%= f.text_field :frequency, placeholder:"Inform  subscribers how often you will be publishing ", class: "form-control", :autofocus => true %>
+     </div>
+
+      <div class="field">
+       <%= f.select :time, options_for_select(%w[Mornings Afternoons Evenings]) ,{:prompt => 'choose a time of the day  you will be publishing'}%>
+       
+     </div><br>
+
+  <div class="form-group">
     <%= f.label :created_by %>
-    <%= f.text_field :author, class: "form-control",placeholder:"That would be your name",:autofocus => true %>
+    <%= f.text_field :author, class: "form-control",placeholder:"choose the name you want to appear on the newsletter",:autofocus => true %>
   </div>
   
-  <p style="color:red"> by clicking 'CREATE NEWSLETTER' you are agreeing to submit to iscoop a new issue of your newsletter <b>everyday</b></p>
+  
   <div class="actions">
     <%= f.submit "CREATE NEWSLETTER", class: "btn btn-primary" %>
   </div>
 <% end %>
 
 
-<% else %>
-
-<p> You can only have one newsletter at a time</p>
-
-<% end %>

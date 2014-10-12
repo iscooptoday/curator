@@ -13,8 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :choose_newsletter_to_submit_to %><br>
-    <%= collection_select(:link, :topic_id, current_user.topics, :id, :description, {:prompt => false })  %><br><br>
+    <%= collection_select(:link, :topic_id, current_user.topics, :id, :description, {:prompt => "choose a newsletter to submit to" })  %><br><br>
   </div>
 
   
@@ -28,8 +27,9 @@
   <%= f.text_area :description,placeholder:"don't forget to add images ",class: "form-control" %>
   </div>
 
+
   
   <div class="actions">
     <%= f.submit "SUBMIT ISSUE" %>
-  </div>
+  </div><br>
 <% end %>

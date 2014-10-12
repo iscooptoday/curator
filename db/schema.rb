@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928095019) do
+ActiveRecord::Schema.define(version: 20141012050105) do
+
+  create_table "attached_images", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "follows", force: true do |t|
     t.string   "follower_type"
@@ -49,6 +54,8 @@ ActiveRecord::Schema.define(version: 20140928095019) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "publish_frequency"
+    t.string   "publish_time"
   end
 
   create_table "mentions", force: true do |t|
@@ -62,12 +69,24 @@ ActiveRecord::Schema.define(version: 20140928095019) do
   add_index "mentions", ["mentionable_id", "mentionable_type"], name: "fk_mentionables"
   add_index "mentions", ["mentioner_id", "mentioner_type"], name: "fk_mentions"
 
+  create_table "photos", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pictures", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "topics", force: true do |t|
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "author"
+    t.string   "frequency"
+    t.string   "time"
   end
 
   create_table "users", force: true do |t|

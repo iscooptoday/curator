@@ -11,3 +11,8 @@
 
 #view the link
 <p style=font-size:15px > <%= link_to "click to view this as a webpage", l.url,{:style=>'color:#3333D6;',:class => "css_class"} %> </p>
+
+
+# each user can only have one newsletter. checks if no newsletters(topic) for the user before carrying out the code. else just say <p> You can only have one newsletter at a time</p> the if will be at the very top of the form.html for the topic and else at the very botton.
+
+<% if current_user.topics.blank? %>
