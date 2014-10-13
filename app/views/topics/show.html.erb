@@ -5,7 +5,11 @@
 
   <div align="center">
   <h2> <%=@topic.description %></h2>
-  by <b style="color:red"><%=@topic.author %></b>
+  by <b style="color:red"><%=@topic.author %></b><br>
+  
+  published <b style="color:red"><%= @topic.frequency if @topic.frequency %></b> in the <b style="color:red"><%= @topic.time if @topic.time %></b>
+
+
   </div><br><br>
   
   <p> <%=@topic.welcome_message %></p>
