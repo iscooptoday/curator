@@ -38,29 +38,19 @@
   
 <% @topic.links.order("created_at DESC").each do |l| %>
 
+
+
 <div>
 <p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> posted <%= time_ago_in_words(l.created_at ) %> ago</p>
 </div>
 
-<div class="panel panel-default">
-<div style="background-color:#ecf0f1;font-family:verdana" class="panel-heading"> 
-	<p style="font-size:16px"><%= @topic.author %><br>
+
+ <div>
+<p style="font-size:16px"><%= @topic.author %><br>
 	<%= @topic.description %> Newsletter </p> 
 </div> <br>
 
-<div class="panel-body">
-<p><%= image_tag l.image.url (:medium) %></p><br>
-<p style="color:#34495e"><%= l.description %></p>
-</div> 
-
-
-
-
-<div style="background-color:#ecf0f1" class="panel-footer"><p>Thank you for reading my newsletter. Come back for the next issue</p>
-</div>
-
-</div>
-
+<%= render_sir_trevor(l.stuff) %>
 
 <hr>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012185519) do
+ActiveRecord::Schema.define(version: 20141013175152) do
 
   create_table "attached_images", force: true do |t|
     t.datetime "created_at"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20141012185519) do
     t.datetime "image_updated_at"
     t.string   "publish_frequency"
     t.string   "publish_time"
+    t.text     "content"
+    t.text     "stuff"
   end
 
   create_table "mentions", force: true do |t|

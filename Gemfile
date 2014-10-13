@@ -12,6 +12,7 @@ gem 'devise'
 gem "socialization"
 gem 'bootstrap-sass'
 gem 'paperclip', '~> 3.0'
+gem 'sir-trevor-rails', git: 'https://github.com/maxmcd/sir-trevor-rails.git'
 
 group :development, :test do
      gem 'sqlite3'
