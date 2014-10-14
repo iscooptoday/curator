@@ -13,6 +13,7 @@ gem "socialization"
 gem 'bootstrap-sass'
 gem 'paperclip', '~> 3.0'
 gem 'sir-trevor-rails', git: 'https://github.com/maxmcd/sir-trevor-rails.git'
+gem 'aws-sdk', '~> 1.20.0'
 
 group :development, :test do
      gem 'sqlite3'
