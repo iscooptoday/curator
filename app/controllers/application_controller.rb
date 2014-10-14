@@ -1,5 +1,7 @@
+require 'sir-trevor-rails'
+
 class ApplicationController < ActionController::Base
-	require 'sir-trevor-rails'
+	
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
