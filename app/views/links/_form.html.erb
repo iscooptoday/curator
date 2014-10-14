@@ -16,8 +16,13 @@
     <%= collection_select(:link, :topic_id, current_user.topics, :id, :description, {:prompt => "choose a newsletter to submit to" })  %><br><br>
   </div>
 
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
   
-  <%= f.sir_trevor_text_area :stuff %>
+ <%= f.sir_trevor_text_area :stuff %>
   
 
 
