@@ -1,6 +1,5 @@
-class ImagesController < AdminController
- 
-def create
+class ImagesController < ApplicationController
+	 def create
 uploader = SirTrevorImageUploader.new
  
 if uploader.store! params[:attachment][:file]
@@ -10,5 +9,4 @@ render :json => uploader.errors, status: 500
 end
  
 end
- 
 end
