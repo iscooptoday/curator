@@ -1,3 +1,5 @@
+# config/initializers/carrierwave.rb
+ 
 require 'carrierwave/processing/mime_types'
 require 'securerandom'
  
@@ -9,11 +11,11 @@ elsif !Rails.env.development?
 config.storage = :fog
 config.fog_credentials = {
 :provider => 'AWS',
-:aws_access_key_id => ENV['AKIAICGC5HJMF5CPPWPA'],
-:aws_secret_access_key => ENV['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'],
+:aws_access_key_id => ENV['S3_KEY'],
+:aws_secret_access_key => ENV['S3_SECRET'],
 :region => 'eu-west-1'
 }
-config.fog_directory = ENV['iscoop']
+config.fog_directory = ENV['S3_BUCKET']
 config.fog_public = true
 end
 end
