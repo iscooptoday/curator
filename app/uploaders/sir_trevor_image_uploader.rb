@@ -1,6 +1,12 @@
+# encoding: utf-8
+
 class SirTrevorImageUploader < CarrierWave::Uploader::Base
- 
-def store_dir
+
+  # Include RMagick or MiniMagick support:
+  # include CarrierWave::RMagick
+  # include CarrierWave::MiniMagick
+
+   def store_dir
 "uploads/editor".tap do |s|
 s.prepend "test_" if Rails.env.test?
 end
@@ -33,4 +39,6 @@ def as_json(options = nil)
 file: super["uploader"]
 }
 end
+end
+
 end
