@@ -10,7 +10,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem "socialization"
 gem 'bootstrap-sass'
-gem 'paperclip', '~> 3.0'
+gem "carrierwave"
+gem "mini_magick", "~> 3.3"
+gem "fog", "~> 1.3.1"
 gem 'sir-trevor-rails', git: 'https://github.com/maxmcd/sir-trevor-rails.git'
 gem 'aws-sdk', '~> 1.20.0'
 
