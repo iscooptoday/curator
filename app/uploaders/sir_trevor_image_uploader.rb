@@ -36,4 +36,3 @@ file: super["uploader"]
 end
 end
 
-end
