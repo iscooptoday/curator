@@ -27,6 +27,15 @@
     <%= f.submit "SUBMIT ISSUE" %>
   </div><br>
 
+<script language="javascript" type="text/javascript"> 
+$(function(){
+  var editor = new SirTrevor.Editor({ el: $('.sir-trevor-area') });
+});
 
+  SirTrevor.setDefaults({
+uploadUrl: "/images"
+});
+  
+</script>
 
 <% end %>
