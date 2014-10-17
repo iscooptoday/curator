@@ -1,4 +1,1 @@
 
-SirTrevor.setDefaults({
-uploadUrl: "/images"
-});
