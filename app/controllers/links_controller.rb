@@ -16,6 +16,7 @@ class LinksController < ApplicationController
     @link = Link.new
     @topics = Topic.all
   end
+  
 
   def edit
     @topics = Topic.all

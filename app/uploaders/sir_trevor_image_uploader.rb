@@ -1,12 +1,7 @@
-
-
 class SirTrevorImageUploader < CarrierWave::Uploader::Base
 
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
 
-   def store_dir
+ def store_dir
 "uploads/editor".tap do |s|
 s.prepend "test_" if Rails.env.test?
 end

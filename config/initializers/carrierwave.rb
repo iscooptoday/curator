@@ -1,5 +1,3 @@
-
- 
 require 'carrierwave/processing/mime_types'
 require 'securerandom'
  
