@@ -1,6 +1,5 @@
 class Link < ActiveRecord::Base
 	belongs_to:topic
-	
-
-  
-end
+	mount_uploader :image, SirTrevorImageUploader
+ 
+ end
