@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
 	 
 def create
+  
   uploader = SirTrevorImageUploader.new
  
   if uploader.store! params[:attachment][:file]
