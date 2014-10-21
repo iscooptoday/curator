@@ -4,10 +4,13 @@ Curator::Application.routes.draw do
   get "contact" => "pages#contact"
   get "feed" => "pages#feed"
   get "my_topics" => "pages#my_topics"
-  
+  get "send_text" => "text_sender"
+    
   resources :links
 
   resources :topics
+
+  
   
   
  devise_for :users

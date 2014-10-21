@@ -15,6 +15,8 @@ gem "carrierwave"
 gem "mini_magick", "~> 3.3"
 gem "fog", "~> 1.3.1"
 gem 'aws-sdk', '~> 1.20.0'
+gem 'twilio-ruby', '~> 3.12'
+gem   'sinatra'
 
 group :development, :test do
      gem 'sqlite3'

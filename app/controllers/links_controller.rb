@@ -1,4 +1,8 @@
 class LinksController < ApplicationController
+
+  require 'rubygems'
+  require 'twilio-ruby'
+  
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   # need to login before doing anything 
@@ -15,6 +19,7 @@ class LinksController < ApplicationController
   def new
     @link = Link.new
     @topics = Topic.all
+    
   end
   
 
@@ -24,6 +29,25 @@ class LinksController < ApplicationController
 
 
   def create
+     #do the twilio thing first
+    account_sid =  "AC810e6bc2b5f92cb7b59025d3269b6997"
+    auth_token = "435264bc4f065b988c6dccba3e936b4e"
+    client = Twilio::REST::Client.new account_sid, auth_token
+    from = "6697211953" # Your Twilio number
+    subscribers = {
+    "+14084804906" => "Gibril Sillah",
+
+    }
+    subscribers.each do |key, value|
+    client.account.messages.create(
+    :from => from,
+    :to => key,
+    :body => "Hey #{value}, its after create "
+   )
+    puts "Sent message to #{value}"
+    end
+    
+    #then create the link 
     @link = Link.new(link_params)
 
     
