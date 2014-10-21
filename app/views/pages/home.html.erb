@@ -1,15 +1,20 @@
 
-     <div class="jumbotron center">
+     <div>
       <% if user_signed_in? %>
-        
-        <p style="font-family:Open Sans;">Welcome. Please give feedback to help improve the site for everyone.Thanks and enjoy
-         </p>  
 
-        <%= link_to "you may enter site", my_topics_path, class: "btn btn-default btn-lg" %>
+      <%= link_to 'SUBMIT AN ISSUE', new_link_path,class: "btn btn-primary btn-lg" %>
+      <%= link_to 'CREATE NEWSLETTER', new_topic_path,class: "btn btn-primary btn-lg" %>
+
+      <h3> My Newsletters </h3>
+      <% current_user.topics.each do |topic| %>
+      <p><%= link_to topic.description, topic_path(topic) %><p> <hr>
+      <% end %>
+        
+        
          
       <% else %>
      
-       <p>Iscoop makes it extremely easy for anyone to create a personal newsletter and follow personal newsletters created by friends, family and other people you are interested in.<br> <h2> How it works</h2> You get 3 push notifications a day. One in the morning, for all the newsletters that you are following that are published in the mornings. One in the afternoon for all the newsletters that you are following that are published in the afternoons and one in the evenings for all the newsletters that you are following that are published in the evenings.</p>
+       <p>Iscoop lets you create a personal newsletter that only a handful of your friends can subscribe to.</p>
        
         
         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>

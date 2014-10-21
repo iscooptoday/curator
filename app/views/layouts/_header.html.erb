@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to "ISCOOP", my_topics_path, class: "navbar-brand" %>
+    <%= link_to "ISCOOP", root_path, class: "navbar-brand" %>
     
   </div>
 
@@ -15,10 +15,8 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-      <li><%= link_to 'SUBMIT AN ISSUE', new_link_path %></li>
-      <li><%= link_to 'CREATE NEWSLETTER', new_topic_path %></li>
+      
       <li><%= link_to 'CONTACT', contact_path %></li>
-      <li><%= link_to 'MY ACCOUNT', account_management_path %></li>
       <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li> 
      <% else %>
      <li><%= link_to "SIGN IN", new_user_session_path %></li>

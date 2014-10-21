@@ -3,7 +3,6 @@ Curator::Application.routes.draw do
   root  "pages#home"
   get "contact" => "pages#contact"
   get "feed" => "pages#feed"
-  get "account_management" => "pages#account_management"
   get "my_topics" => "pages#my_topics"
   
   resources :links
