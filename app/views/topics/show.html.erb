@@ -33,16 +33,18 @@
 
 <h3>Subscribers</h3>
 <B style="color:blue"><%=@topic.followers(User).count %></B>
+<% @topic.followers(User).each do |u| %>
+<%= u.nom %>
+
 </div><br><br>
+<% end %>
     
   
 <% @topic.links.order("created_at DESC").each do |l| %>
-
-
-
 <div>
 <p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> posted <%= time_ago_in_words(l.created_at ) %> ago</p>
 </div>
+
 
 
  <div>
@@ -52,7 +54,7 @@
 
 <%# render_sir_trevor(l.stuff) %>
 
-<% end %> 
+ <% end %> 
 
 
 
