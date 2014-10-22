@@ -5,8 +5,7 @@
       <%= link_to 'SUBMIT AN ISSUE', new_link_path,class: "btn btn-primary btn-lg" %><br>
       <%= link_to 'CREATE NEWSLETTER', new_topic_path,class: "btn btn-primary btn-lg" %><br>
      
-     <%= button_to"text", send_text_path, :method => :get,class: "btn btn-primary btn-lg" %><br>
-
+     
       <h3> My Newsletters </h3>
       <% current_user.topics.each do |topic| %>
       <p><%= link_to topic.description, topic_path(topic) %><p> <hr>
