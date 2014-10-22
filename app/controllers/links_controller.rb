@@ -29,26 +29,32 @@ class LinksController < ApplicationController
 
 
   def create
-     #do the twilio thing first
+    
+    
+    #create the link 
+    @link = Link.new(link_params)
+
+
+ # then do the twilio thing
     account_sid =  "AC810e6bc2b5f92cb7b59025d3269b6997"
     auth_token = "435264bc4f065b988c6dccba3e936b4e"
     client = Twilio::REST::Client.new account_sid, auth_token
     from = "6697211953" # Your Twilio number
-    subscribers = {
-    "+14084804906" => "Gibril Sillah",
-
-    }
-    subscribers.each do |key, value|
-    client.account.messages.create(
+      
+  @link.topic.followers(User).each do |u| 
+      
+  client.account.messages.create(
     :from => from,
-    :to => key,
-    :body => "Hey #{value}, its after create "
+    :to => u.nom,
+    :body => "Hey its after create "
    )
-    puts "Sent message to #{value}"
+    puts "Sent message "
     end
-    
-    #then create the link 
-    @link = Link.new(link_params)
+
+
+
+
+
 
     
       if @link.save
