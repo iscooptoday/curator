@@ -55,7 +55,7 @@ class TopicsController < ApplicationController
   private
     
     def set_topic
-      @topic = Topic.find_by_description(params[:id])
+      @topic = Topic.find_by_description(params[:description])
     end
 
     

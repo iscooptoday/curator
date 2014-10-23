@@ -5,6 +5,7 @@ Curator::Application.routes.draw do
   get "feed" => "pages#feed"
   get "my_topics" => "pages#my_topics"
   get "send_text" => "text_sender"
+  get '/:description',      to: 'topics#show', as: 'topic'
     
   resources :links
 

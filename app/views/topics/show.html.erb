@@ -4,8 +4,7 @@
 <p id="notice"></p>
 
   <div align="center">
-  <h2> <%=@topic.description %></h2>
-  by <b style="color:red"><%=@topic.author %></b><br>
+  by <b style="color:red"><%=@topic.author if @topic.author %></b><br>
   
   published <b style="color:red"><%= @topic.frequency if @topic.frequency %></b> in the <b style="color:red"><%= @topic.time if @topic.time %></b>
 
@@ -48,8 +47,8 @@
 
 
  <div>
-<p style="font-size:16px"><%= @topic.author %><br>
-	<%= @topic.description %> Newsletter </p> 
+<p style="font-size:16px"><%= @topic.author if @topic.author %><br>
+	
 </div> <br>
 
 <%# render_sir_trevor(l.stuff) %>
