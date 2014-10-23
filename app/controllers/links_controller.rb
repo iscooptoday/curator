@@ -48,7 +48,7 @@ class LinksController < ApplicationController
     :from => from,
     :to => u.nom,
 
-    :body => "hi there"
+    :body => request.uri
 
        )
   
