@@ -46,7 +46,7 @@ class LinksController < ApplicationController
   client.account.messages.create(
     :from => from,
     :to => u.nom,
-    :body => "Hey its after create "
+    :body => request.original_url
    )
     puts "Sent message "
     end
