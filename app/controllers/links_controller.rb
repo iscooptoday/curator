@@ -40,15 +40,19 @@ class LinksController < ApplicationController
     auth_token = "435264bc4f065b988c6dccba3e936b4e"
     client = Twilio::REST::Client.new account_sid, auth_token
     from = "6697211953" # Your Twilio number
+    
       
-  @link.topic.followers(User).each do |u| 
-      
+   
+  @link.topic.followers(User).each do |u|    
   client.account.messages.create(
     :from => from,
     :to => u.nom,
-    :body => request.referer
-   )
-    puts "Sent message "
+
+    :body => "hi there"
+
+       )
+  
+    puts "message sent "
     end
 
 
