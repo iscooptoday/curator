@@ -20,17 +20,17 @@
 
   <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :description, class: "form-control",placeholder:" what do you want to call it.. needs to be unique",:autofocus => true %>
+    <%= f.text_field :description, class: "form-control",placeholder:" what do you want to call it. no spaces and needs to be unique",:autofocus => true %>
   </div>
 
   <div class="form-group">
        <%= f.label :frequency %>
-       <%= f.text_field :frequency, class: "form-control", placeholder:"Let your them know how often you will be sharing..dily, weekly, it depends " ,:autofocus => true %>
+       <%= f.text_field :frequency, class: "form-control", placeholder:"Let your them know how often you will be sharing..dily, weekly or random" ,:autofocus => true %>
      </div>
 
   <div class="form-group">
-    <%= f.label :created_by %>
-    <%= f.text_field :author, class: "form-control",placeholder:"dosent have to be your real name if u dnt want to",:autofocus => true %>
+    <% f.label :created_by %>
+    <% f.text_field :author, class: "form-control",placeholder:"dosent have to be your real name if u dnt want to",:autofocus => true %>
   </div>
 
   <div class="form-group">

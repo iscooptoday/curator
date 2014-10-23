@@ -4,14 +4,13 @@
 <p id="notice"></p>
 
   <div align="center">
-  by <b style="color:red"><%=@topic.author if @topic.author %></b><br>
+
+  <p><%=@topic.welcome_message %></P>
   
-  published <b style="color:red"><%= @topic.frequency if @topic.frequency %></b> in the <b style="color:red"><%= @topic.time if @topic.time %></b>
-
-
+  published <b style="color:red"><%= @topic.frequency if @topic.frequency %></b> 
   </div><br><br>
   
-  <p> <%=@topic.welcome_message %></p>
+  
   
   <% if current_user.follows?(@topic) %>  
 
