@@ -33,13 +33,16 @@ class LinksController < ApplicationController
     
     #create the link 
     @link = Link.new(link_params)
-
-
- # then do the twilio thing
+    
+      if @link.save
+        redirect_to @link, notice: 'issue was successfully submitted.' 
+        
+      # then do the twilio thing
     account_sid =  "AC810e6bc2b5f92cb7b59025d3269b6997"
     auth_token = "435264bc4f065b988c6dccba3e936b4e"
     client = Twilio::REST::Client.new account_sid, auth_token
     from = "6697211953" # Your Twilio number
+    url = link_path(@link)
     
       
    
@@ -48,7 +51,9 @@ class LinksController < ApplicationController
     :from => from,
     :to => u.nom,
 
-    :body => "hey bruce im texting you from the web"
+    :body => "http://www.iscoop.co#{url}"
+
+     
 
        )
   
@@ -59,11 +64,6 @@ class LinksController < ApplicationController
 
 
 
-
-    
-      if @link.save
-        redirect_to @link, notice: 'issue was successfully submitted.' 
-        
       else
         render action: 'new' 
         
