@@ -5,9 +5,6 @@ class LinksController < ApplicationController
   
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
-  # need to login before doing anything 
-  before_action :authenticate_user!
-
  
   def index
     @links = Link.all.order("created_at DESC")
