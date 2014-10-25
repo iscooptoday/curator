@@ -19,7 +19,16 @@
   
 
   
-  <%= f.sir_trevor_text_area :stuff %>
+  
+  <div class="form-group">
+    <%= f.label :link_1 %>
+    <%= f.text_field :url, class: "form-control",placeholder:" enter the first link",:autofocus => true %>
+  </div>
+
+  
+
+
+  
 
 
   
@@ -27,15 +36,6 @@
     <%= f.submit "SUBMIT ISSUE" %>
   </div><br>
 
-<script language="javascript" type="text/javascript"> 
-$(function(){
-  var editor = new SirTrevor.Editor({ el: $('.sir-trevor-area') });
-});
 
-  SirTrevor.setDefaults({
-uploadUrl: "/images"
-});
-  
-</script>
 
 <% end %>
