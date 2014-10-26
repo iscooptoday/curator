@@ -34,32 +34,31 @@ class LinksController < ApplicationController
       if @link.save
         redirect_to @link, notice: 'issue was successfully submitted.' 
         
-      # then do the twilio thing
+     
+
+    # setting up the variables to send text
     account_sid =  "AC810e6bc2b5f92cb7b59025d3269b6997"
     auth_token = "435264bc4f065b988c6dccba3e936b4e"
     client = Twilio::REST::Client.new account_sid, auth_token
     from = "6697211953" # Your Twilio number
     url = link_path(@link)
+    newsletter = @link.topic.description
     
-      
+   # check if the newsletter has followers b4 sending text
+  if @link.topic.followers(User).count != nil   
    
+  #send the text
   @link.topic.followers(User).each do |u|    
   client.account.messages.create(
     :from => from,
-    :to => u.nom,
+    :to => u.nom ,
 
-    :body => "http://www.iscoop.co#{url}"
-
-     
-
+    :body => "#{newsletter} http://www.iscoop.co#{url}"
        )
   
     puts "message sent "
     end
-
-
-
-
+    end
 
       else
         render action: 'new' 
