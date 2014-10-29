@@ -7,7 +7,10 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-   
+    <div class="form-group">
+   <%= f.label :name %>
+   <%= f.text_field :nom, autofocus: true, class: "form-control",placeholder:"what does your friend's call you" %>
+   </div>
 
   <div class="form-group">
   <%= f.label :email %>
@@ -23,10 +26,7 @@
    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control" %></div>
 
-    <div class="form-group">
-   <%= f.label :Phone_Number %>
-   <%= f.text_field :nom, autofocus: true, class: "form-control",placeholder:"+1 then the full number" %>
-   </div>
+   
   
   <div class="form-group">
   <%= f.submit "Sign up" ,class: "btn btn-primary"%></div>

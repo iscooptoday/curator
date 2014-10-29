@@ -15,7 +15,7 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
-    @topics = Topic.all
+    
     
   end
   
@@ -25,9 +25,7 @@ class LinksController < ApplicationController
   end
 
 
-  def create
-    
-    
+  def create 
     #create the link 
     @link = Link.new(link_params)
     
@@ -42,29 +40,28 @@ class LinksController < ApplicationController
     client = Twilio::REST::Client.new account_sid, auth_token
     from = "6697211953" # Your Twilio number
     url = link_path(@link)
-    newsletter = @link.topic.description
+    sender = current_user.nom
+    recipient = @link.stuff
     
-   # check if the newsletter has followers b4 sending text
-  if @link.topic.followers(User).count != nil   
    
-  #send the text
-  @link.topic.followers(User).each do |u|    
+   
+  #send the text    
   client.account.messages.create(
     :from => from,
-    :to => u.nom ,
+    :to => recipient ,
 
-    :body => "#{newsletter} http://www.iscoop.co#{url}"
+    :body => "#{sender} http://www.iscoop.co#{url}"
        )
   
     puts "message sent "
-    end
-    end
+    
+    
 
       else
         render action: 'new' 
         
       end
-    end
+ end
 
   
   def update
@@ -92,6 +89,9 @@ class LinksController < ApplicationController
 
     
     def link_params
-      params.require(:link).permit(:description, :topic_id,:stuff,:url,:url2,:url3,:url4,:url5)
+      params.require(:link).permit(:content,:user_id, :stuff,:url,:url2,:url3,:url4,:url5)
     end
-end
+
+  end
+  
+

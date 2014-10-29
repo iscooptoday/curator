@@ -1,4 +1,4 @@
- # encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013175152) do
+ActiveRecord::Schema.define(version: 20141029070348) do
 
   create_table "attached_images", force: true do |t|
     t.datetime "created_at"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20141013175152) do
     t.string   "publish_time"
     t.text     "content"
     t.text     "stuff"
+    t.string   "image"
+    t.integer  "user_id"
   end
 
   create_table "mentions", force: true do |t|
@@ -81,16 +83,8 @@ ActiveRecord::Schema.define(version: 20141013175152) do
     t.datetime "updated_at"
   end
 
-  create_table "topics", force: true do |t|
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.string   "author"
-    t.string   "frequency"
-    t.string   "time"
-    t.string   "welcome_message"
-  end
+# Could not dump table "topics" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

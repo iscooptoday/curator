@@ -12,13 +12,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= collection_select(:link, :topic_id, current_user.topics, :id, :description, {:prompt => "choose a newsletter to submit to" })  %><br><br>
+  <div class="form-group">
+    <%= f.label :personal_note %>
+    <%= f.text_area :content, class: "form-control",placeholder:" enter a personal note if you like",:autofocus => true %>
   </div>
 
-  
-
-  
+  <div class="form-group">
+    <%= f.label :recipient_phone_number %>
+    <%= f.text_field :stuff, class: "form-control",placeholder:" full number including country code eg +1 for US",:autofocus => true %>
+  </div>
   
   <div class="form-group">
     <%= f.label :link_1 %>

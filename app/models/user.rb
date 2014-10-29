@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	
-  has_many:topics
+  has_many:links
   acts_as_follower
   
   # Include default devise modules. Others available are:

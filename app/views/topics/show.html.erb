@@ -38,20 +38,7 @@
 <% end %>
     
   
-<% @topic.links.order("created_at DESC").each do |l| %>
-<div>
-<p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> posted <%= time_ago_in_words(l.created_at ) %> ago</p>
-</div>
 
- 
-<a class= "embedly-card" href= "<%= l.url %>"> some title</a>
- <a class= "embedly-card" href= "<%= l.url2 %>"> some title</a>
- <a class= "embedly-card" href= "<%= l.url3 %>"> some title</a>
- <a class= "embedly-card" href= "<%= l.url4 %>"> some title</a>
- <a class= "embedly-card" href= "<%= l.url5 %>"> some title</a>
- 
-
- <% end %> 
 
 
 

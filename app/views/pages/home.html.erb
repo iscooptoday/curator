@@ -3,23 +3,31 @@
       <% if user_signed_in? %>
 
       <%= link_to 'SUBMIT AN ISSUE', new_link_path,class: "btn btn-primary btn-lg" %><br><br>
-      <%= link_to 'CREATE NEWSLETTER', new_topic_path,class: "btn btn-primary btn-lg" %><br>
+      
      
-     
-      <h3> My Newsletters </h3>
-      <% current_user.topics.each do |topic| %>
-      <p><%= link_to topic.description, topic_path(topic) %><p> <hr>
-      <% end %>
-        
-        
+<h3> My stuff </h3>
+<% current_user.links.each do |l| %>
+<div>
+<p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> posted <%= time_ago_in_words(l.created_at ) %> ago</p>
+</div>
+
+ <p><%= l.content %></p>
+<a class= "embedly-card" href= "<%= l.url %>"> some title</a>
+ <a class= "embedly-card" href= "<%= l.url2 %>"> some title</a>
+ <a class= "embedly-card" href= "<%= l.url3 %>"> some title</a>
+ <a class= "embedly-card" href= "<%= l.url4 %>"> some title</a>
+ <a class= "embedly-card" href= "<%= l.url5 %>"> some title</a>
+
+ 
+ <% end %>       
          
-      <% else %>
+  <% else %>
      
-       <p>Iscoop lets you create a personal newsletter that only a handful of your friends can subscribe to.</p>
+  <p>Iscoop lets you share unlimited number of youtube videos,intagram photos, gifs from tumbler, vine videos etc to a friend via sms absolutely free of charge.</p>
        
         
-        <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-lg" %>
-          <% end %> 
-            </div>  
+  <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-lg" %>
+  <% end %> 
+  </div>  
 
