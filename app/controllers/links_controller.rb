@@ -14,7 +14,7 @@ class LinksController < ApplicationController
   end
 
   def new
-    @link = Link.new
+    @link = current_user.links.build
     
     
   end
@@ -27,7 +27,7 @@ class LinksController < ApplicationController
 
   def create 
     #create the link 
-    @link = Link.new(link_params)
+    @link = current_user.links.build(link_params)
     
       if @link.save
         redirect_to @link, notice: 'issue was successfully submitted.' 
