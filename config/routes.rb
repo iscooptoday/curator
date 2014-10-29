@@ -4,6 +4,7 @@ Curator::Application.routes.draw do
   get "contact" => "pages#contact"
   get "feed" => "pages#feed"
   get "my_topics" => "pages#my_topics"
+  get "stuff_i_shared" => "pages#stuff_i_shared"
   get "send_text" => "text_sender"
   get '/:description',      to: 'topics#show', as: 'topic'
   patch '/:description',      to: 'topics#update', as: 'update_topic'
