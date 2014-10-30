@@ -16,3 +16,18 @@
 # each user can only have one newsletter. checks if no newsletters(topic) for the user before carrying out the code. else just say <p> You can only have one newsletter at a time</p> the if will be at the very top of the form.html for the topic and else at the very botton.
 
 <% if current_user.topics.blank? %>
+
+
+#your feed
+<% if user_signed_in? %>
+ 
+<% current_user.links.order("created_at DESC").each do |l| %>
+<div>
+<p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> posted <%= time_ago_in_words(l.created_at ) %> ago</p>
+</div>
+
+ <p><%= l.content %></p>
+<a class= "embedly-card" href= "<%= l.url %>"> some title</a>
+
+<% end %> 
+<% end %> 
