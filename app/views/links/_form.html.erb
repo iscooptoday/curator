@@ -13,15 +13,15 @@
   <% end %>
 
   <div class="form">
-    <%= f.label :paste_me_please %>
-    <%= f.text_field :url, class: "url",placeholder:" paste the link to the stuff you want to send and click 'GO'",size:"33",:autofocus => true %><a href="#" class="create">GO</a>
+    <%= f.label :paste_and_click_GO %>
+    <%= f.text_field :url, class: "url",size:"30",:autofocus => true %><a href="#" class="create">GO</a>
   </div>
 
   <div class="result"></div><br><br>
 
   <div class="form-group">
     <%= f.label :your_friends_phone_number %>
-    <%= f.text_field :stuff, class: "form-control",placeholder:" easier if you copy and paste. include country code eg +1 for US. ",:autofocus => true %>
+    <%= f.text_field :stuff, class: "form-control",placeholder:"include country code eg +1 for US. ",:autofocus => true %>
   </div>
 
 <div class="form-group">
