@@ -89,7 +89,7 @@ class LinksController < ApplicationController
 
     
     def link_params
-      params.require(:link).permit(:content,:user_id, :stuff,:url,:url2,:url3,:url4,:url5)
+      params.require(:link).permit(:description,:user_id, :stuff,:url,:url2,:url3,:url4,:url5)
     end
 
   end
