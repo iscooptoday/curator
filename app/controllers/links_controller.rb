@@ -50,7 +50,7 @@ class LinksController < ApplicationController
     :from => from,
     :to => recipient ,
 
-    :body => "#{sender} http://www.iscoop.co#{url}"
+    :body => "You got an Iscoop from #{sender} check it out! http://www.iscoop.co#{url}"
        )
   
     puts "message sent "
