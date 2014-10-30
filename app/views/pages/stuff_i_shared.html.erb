@@ -1,4 +1,4 @@
-
+<% if user_signed_in? %>
 
 <% current_user.links.order("created_at DESC").each do |l| %>
 <div>
@@ -8,4 +8,5 @@
  <p><%= l.content %></p>
 <a class= "embedly-card" href= "<%= l.url %>"> some title</a>
 
+<% end %> 
 <% end %> 
