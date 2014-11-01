@@ -2,17 +2,23 @@
      <div>
       <% if user_signed_in? %>
 
-      <%= render 'links/form' %>
+      <%= link_to "CREATE NEWSLETTER", new_topic_path, class: "btn btn-default btn-lg" %><br><br>
 
+      <%= link_to "SUBMIT ISSUE", new_link_path, class: "btn btn-default btn-lg" %>
+
+      <h3> My Newsletters </h3>
+     <% current_user.topics.each do |topic| %>
+     <p><%= link_to topic.description, topic_path(topic) %> </p>
      
+     <% end %>
            
   <% else %>
      
-  <p>Iscoop is the easiest way to share funny and cool stuff you found online with a friend</p>
+  <p>Iscoop is an easy way to send animated gifs and other online media to a friend via sms </p>
 
-  <p>wheteher its a gif, vine video, instagram photo, youtube video, tumblr posts etc, Iscoop lets you effortlessly send it to anyone you like without having to download anything.</p>
+  <p>Just copy and paste the url of the stuff you want to send, iscoop will automatically embed it for you and you can enter the phone number of your friend add a personal note and click send.</p>
 
-  <p>Just paste the url of the stuff you want to share into iscoop, enter the number of the person you want to send it to, add a personal note if you want and send it</p>     
+  <p>Your friend will get a text message with the content you send. And its absolutely free</p>     
 
        
         

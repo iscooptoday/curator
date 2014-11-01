@@ -14,7 +14,8 @@ class LinksController < ApplicationController
   end
 
   def new
-    @link = current_user.links.build
+    @link = Link.new
+    @topic=Topic.all
     
     
   end
@@ -27,7 +28,7 @@ class LinksController < ApplicationController
 
   def create 
     #create the link 
-    @link = current_user.links.build(link_params)
+    @link = Link.new(link_params)
     
       if @link.save
         redirect_to @link, notice: 'issue was successfully submitted.' 
@@ -40,22 +41,28 @@ class LinksController < ApplicationController
     client = Twilio::REST::Client.new account_sid, auth_token
     from = "6697211953" # Your Twilio number
     url = link_path(@link)
-    sender = current_user.nom
-    recipient = @link.stuff
+    sender = @link.topic.description
     
-   
+    
+   if @link.topic.followers(User) != nil
    
   #send the text    
+  @link.topic.followers(User).each do |u| 
+  
   client.account.messages.create(
     :from => from,
-    :to => recipient ,
+    :to => u.nom ,
 
-    :body => "You got an Iscoop from #{sender} check it out! http://www.iscoop.co#{url}"
+    :body => "A new issue from #{sender} check it out! http://www.iscoop.co#{url}"
        )
   
+  end
     puts "message sent "
     
     
+
+
+    end
 
       else
         render action: 'new' 
@@ -89,7 +96,7 @@ class LinksController < ApplicationController
 
     
     def link_params
-      params.require(:link).permit(:description,:user_id, :stuff,:url,:url2,:url3,:url4,:url5)
+      params.require(:link).permit(:description,:topic_id, :url,:url2,:url3,:url4,:url5)
     end
 
   end

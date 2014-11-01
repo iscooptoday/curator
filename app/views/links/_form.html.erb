@@ -12,40 +12,40 @@
     </div>
   <% end %>
 
-  <div class="form">
-    <%= f.label :paste_and_click_GO %>
-    <%= f.text_field :url, class: "url",size:"25",:autofocus => true %><a href="#" class="create">GO</a>
-  </div>
-
-  <div class="result"></div><br><br>
+  <%= f.collection_select :topic_id, current_user.topics, :id , :description %>
 
   <div class="form-group">
-    <%= f.label :your_friends_phone_number %>
-    <%= f.text_field :stuff, class: "form-control",placeholder:"include country code eg +1 for US. ",:autofocus => true %>
-  </div>
-
-<div class="form-group">
     <%= f.label :personal_note %>
     <%= f.text_area :description, class: "form-control",placeholder:" enter a personal note if you like",:autofocus => true %>
   </div>
- 
 
+  <div class="form=group">
+    <%= f.label :url_1 %>
+    <%= f.text_field :url, class: "form-control",:autofocus => true %>
+  </div>
+
+  <div class="form">
+    <%= f.label :url_2 %>
+    <%= f.text_field :url2, class: "form-control",:autofocus => true %>
+  </div>
   
 
+  <div class="form">
+    <%= f.label :url_3 %>
+    <%= f.text_field :url3, class: "form-control",:autofocus => true %>
+  </div>
+  
 
- <script language="javascript" type="text/javascript"> 
-      
-      $('.create').on('click', function () {
-    var url = $('.url').val();
+  <div class="form">
+    <%= f.label :url_4 %>
+    <%= f.text_field :url4, class: "form-control",:autofocus => true %>
+  </div>
+  
 
-    var $a = $('<a href="' + url + '"></a>');
-    $('.result').empty().append($a);
-
-    embedly('card', $a[0]);
-    return false;
-     });
-
-      </script>
+  <div class="form">
+    <%= f.label :url_5 %>
+    <%= f.text_field :url5, class: "form-control",:autofocus => true %>
+  </div>
   
   <div class="actions">
     <%= f.submit "SEND" %>
