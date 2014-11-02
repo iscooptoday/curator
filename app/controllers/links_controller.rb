@@ -15,9 +15,7 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
-    @topic=Topic.all
-    
-    
+    @topic=Topic.all 
   end
   
 
@@ -43,26 +41,28 @@ class LinksController < ApplicationController
     url = link_path(@link)
     sender = @link.topic.description
     
-    
+    #only send text if the newsletter got subscribers
    if @link.topic.followers(User) != nil
-   
+  
   #send the text    
   @link.topic.followers(User).each do |u| 
   
+  #check first if user has a number before sending
+  if u.nom
+  
   client.account.messages.create(
     :from => from,
-    :to => u.nom ,
+    :to => u.nom  ,
 
-    :body => "A new issue from #{sender} check it out! http://www.iscoop.co#{url}"
+    :body => "A new post from #{sender} check it out! http://www.iscoop.co#{url}"
        )
   
   end
+  end
     puts "message sent "
     
-    
-
-
     end
+
 
       else
         render action: 'new' 

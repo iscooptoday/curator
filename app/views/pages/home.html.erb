@@ -2,23 +2,28 @@
      <div>
       <% if user_signed_in? %>
 
-      <%= link_to "CREATE NEWSLETTER", new_topic_path, class: "btn btn-default btn-lg" %><br><br>
 
-      <%= link_to "SUBMIT ISSUE", new_link_path, class: "btn btn-default btn-lg" %>
 
-      <h3> My Newsletters </h3>
+      <%= link_to "CREATE A PAGE", new_topic_path, class: "btn btn-default btn-lg" %><br><br>
+
+      <%= link_to "NEW POST", new_link_path, class: "btn btn-default btn-lg" %><br><br>
+
+      
+     
+
+      
      <% current_user.topics.each do |topic| %>
-     <p><%= link_to topic.description, topic_path(topic) %> </p>
+     <p><%= link_to "MY PAGE", topic_path(topic) %> </p>
      
      <% end %>
            
   <% else %>
      
-  <p>Iscoop is a new platform for engaging your followrs through personal newsletters </p>
+  <p>Iscoop is an sms personal newsletter service that lets you curate all your social media activities on one page </p>
 
-  <p> It gives you the tools to curate rich media content from across all social media platforms and deliver it to your subscribers via sms for free</p>
+  <p> Its an exclusive medium to engage with your most passionate followers and make sure they don't miss anything you post across all social media platforms</p>
 
-  <p>sign up, create a newsletter, then share the url of the signup page to potential subscribers. anytime you publish a new issue, they will get a text message with a link to your post.</p>     
+  <p>sign up, create a page, then share the url of the page to potential subscribers. anytime you publish a new post, they will get a text message with a link to your post.</p>     
 
        
         
