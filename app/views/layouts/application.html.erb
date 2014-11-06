@@ -10,14 +10,18 @@
 </head>
 <body>
 
-<%# facebook for web stuff %>
+<%# facebook sdk for web stuff. make  xfbml to true if youu start using social plugins%>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '373447522818519',
-      xfbml      : true,
+      xfbml      : false,
       version    : 'v2.2'
+    
     });
+  
+
+
   };
 
   (function(d, s, id){
@@ -28,7 +32,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<%# end of facebook for web stuff %>
+<%# end of facebook sdk for web stuff %>
 
 
 <%= render 'layouts/header' %>
