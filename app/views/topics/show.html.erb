@@ -5,6 +5,8 @@
 
   <div align="center">
 
+ <p><%=@topic.description if @topic.description %> by <%=@topic.user.name if @topic.user.name %></P>
+
   <p><%=@topic.welcome_message if @topic.welcome_message %></P>
   
   published <b style="color:red"><%=@topic.frequency if @topic.frequency %></b> 
