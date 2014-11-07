@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require_tree .
 //= require analytics
+//= require sir-trevor
 
 
 

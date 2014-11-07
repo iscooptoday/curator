@@ -14,20 +14,24 @@
 
   <%= f.collection_select :topic_id, current_user.topics, :id , :description %><br><br>
 
-  <div class="form-group">
-    <%= f.label :personal_note %>
-    <%= f.text_area :description, class: "form-control",placeholder:" Say something here if you want",:autofocus => true %>
-  </div>
+  <%= f.sir_trevor_text_area :content, class: "result" %>
+
+   <script language="javascript" type="text/javascript">
+   $(function(){
+  var editor = new SirTrevor.Editor({ el: $('.sir-trevor-area') });
+});
+</script>
+
 
   
 
-
-  <div class="form">
+   <div class="form">
     <%= f.label :link_1 %>
     <%= f.text_field :url,placeholder:"Paste link and click embed", class: "uri",:autofocus => true %><a href="#" class="create">embed</a>
-  </div><br>
+  </div>
 
-  <div class="result"></div>
+<div class = "result"></div>
+  
 
   
   <script language="javascript" type="text/javascript">
@@ -41,7 +45,11 @@
     return false;
 });
 
+
 </script>
+
+
+
 
 <div class="form">
     <%= f.label :link_2 %>
@@ -61,12 +69,11 @@
     embedly('card', $a[0]);
     return false;
 });
-
 </script>
 
 <div class="form">
     <%= f.label :link_3 %>
-    <%= f.text_field :url3, class: "uri3",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create3">embed</a>
+    <%= f.text_field :url3, class: "uri3",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create3">embed</a><%= f.sir_trevor_text_area :content %>
   </div><br>
 
   <div class="result3"></div>
@@ -84,6 +91,7 @@
 });
 
 </script>
+
 
 <div class="form">
     <%= f.label :link_4 %>
@@ -106,10 +114,10 @@
 
 </script>
 
+
 <div class="form">
     <%= f.label :link_5 %>
-    <%= f.text_field :url5, class: "uri5",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create5">embed</a>
-  </div><br>
+    <%= f.text_field :url5, class: "uri5",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create5">embed</a>  </div><br>
 
   <div class="result5"></div>
 

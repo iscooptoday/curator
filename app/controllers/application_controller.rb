@@ -1,4 +1,4 @@
-
+require 'sir-trevor-rails'
 
 class ApplicationController < ActionController::Base
 
