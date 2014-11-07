@@ -1,7 +1,6 @@
 require 'carrierwave/processing/mime_types'
 require 'securerandom'
- 
-CarrierWave.configure do |config|
+ CarrierWave.configure do |config|
  
 if Rails.env.test?
 config.enable_processing = false
