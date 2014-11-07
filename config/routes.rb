@@ -22,6 +22,15 @@ Curator::Application.routes.draw do
 
  resources :images, only: [:create]
 
+
+ namespace :admin do 
+  get '', to: 'dashboard#index', as: '/' 
+  resource :dashboard do
+    post :edit_multiple
+    put :update_multiple
+  end
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
