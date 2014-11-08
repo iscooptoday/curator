@@ -1,4 +1,5 @@
-class ImagesController < AdminController
+class ImagesController < ApplicationController
+
  
   def create
     uploader = SirTrevorImageUploader.new
