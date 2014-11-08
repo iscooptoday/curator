@@ -5,7 +5,7 @@
 
   <div align="center">
 
- <p><%=@topic.description if @topic.description %> by <%=@topic.user.name if @topic.user.name %></P>
+ <p><%=@topic.author if @topic.author %> by <%=@topic.user.name if @topic.user.name %></P>
 
   <p><%=@topic.welcome_message if @topic.welcome_message %></P>
   
