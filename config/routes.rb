@@ -20,7 +20,7 @@ Curator::Application.routes.draw do
   
  devise_for :users
 
- resources :images, only: [:create]
+ 
 
 
 
