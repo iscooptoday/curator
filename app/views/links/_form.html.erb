@@ -15,7 +15,8 @@
   <%= f.collection_select :topic_id, current_user.topics, :id , :description %><br><br>
 
   <%= f.sir_trevor_text_area :stuff, class: "result" %>
-
+   
+   <%# sirtrevor javascript %> 
    <script language="javascript" type="text/javascript">
    $(function(){
   var editor = new SirTrevor.Editor({ el: $('.sir-trevor-area') });
@@ -24,7 +25,7 @@
 
 
   
-
+   <%# embedly stuff %> 
    <div class="form">
     <%= f.label :link_1 %>
     <%= f.text_field :url,placeholder:"Paste link and click embed", class: "uri",:autofocus => true %><a href="#" class="create">embed</a>
