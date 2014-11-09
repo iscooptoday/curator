@@ -1,17 +1,17 @@
    
     <div class="container">
     
-    <% @topics.order("created_at DESC").each do |topic| %>   
+    <% @topics.each do |topic| %>   
     <div class="topics">
-    <p> <%= link_to topic.description, topic_path(topic) %> by 
-     <%= topic.author if topic.author %><br> published <b style="color:red"><%= topic.frequency if topic.frequency %></b></p>
-   
+    <ul> 
+        <li><%= link_to topic.description, topic_path(topic) %> by 
+     <%= topic.author if topic.author %><br> published <b style="color:red"><%= topic.frequency if topic.frequency %></b></li>
+   </ul>
     </div>
-    <hr>
     <% end %>
    </div>     
 
-   <%= link_to 'Back', my_topics_path %>
+   
 
 
 

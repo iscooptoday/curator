@@ -2,6 +2,17 @@
      <div>
       
     <% if user_signed_in? %>
+
+
+    <%# showing all the tags each showing boldness according to frequency the styling is in topics.css.scss%>
+    <h3> CATEGORIES</h3>
+    <div id="tag_cloud">
+     <% tag_cloud Topic.tag_counts, %w{s m l} do |tag, css_class| %>
+     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+     <% end %>
+   </div><br><br><br><br>
+
+
                   
 
     <h3> MY SUBSCRIPTIONS</h3>

@@ -5,10 +5,24 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!
 
   
-  
-  def index
-    @topics = Topic.all
+ 
+
+def index
+  # if a tag is clicked only fetch topics with that tag
+  if params[:tag]
+    @topics = Topic.tagged_with(params[:tag])
+  else
+    @topics = T0pic.all
   end
+end
+
+
+
+
+
+
+
+
 
   def show
   end
@@ -60,6 +74,6 @@ class TopicsController < ApplicationController
 
     
     def topic_params
-      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message)
+      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message,:tag_list)
     end
 end
