@@ -8,6 +8,12 @@ class TopicsController < ApplicationController
  
 
 def index
+
+if params[:query].present?
+    @topics = Topic.search_by_welcome_message(params[:query])
+
+
+
 if params[:tag]
 @topics = Topic.tagged_with(params[:tag]) 
 else

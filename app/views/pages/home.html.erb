@@ -3,6 +3,23 @@
       
     <% if user_signed_in? %>
 
+   
+
+<%= form_tag articles_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+
+
+
+
+
+
+
+
     <%# showing all the tags each showing boldness according to frequency the styling is in topics.css.scss%>
     <h3> POPULAR CATEGORIES</h3>
     <div id="tag_cloud">
