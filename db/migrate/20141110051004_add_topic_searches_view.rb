@@ -14,12 +14,6 @@ FROM topics
 
 UNION
 
-SELECT topics.id AS searchable_id,
-'topic' AS searchable_type,
-topics.tag_list AS term
-FROM topics
-
-UNION
 
 SELECT topics.id AS searchable_id,
 'topic' AS searchable_type,
