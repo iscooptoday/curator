@@ -8,7 +8,7 @@ Curator::Application.routes.draw do
   get '/:description',      to: 'topics#show', as: 'topic'
   patch '/:description',      to: 'topics#update', as: 'update_topic'
   get 'tags/:tag', to: 'topics#index', as: :tag
-  get 'topics?utf8=✓&search=', to: 'topics#index', as: :search
+  match "/search" => "search#index"
   
     
   resources :links

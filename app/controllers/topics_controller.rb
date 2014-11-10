@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
 
 def index
 
-if params[:search].present?
+if params[:q]
 @topics = TopicSearch.new(query: params[:search]).results
  # if a tag is clicked only fetch topics with that tag
   elsif params[:tag]
