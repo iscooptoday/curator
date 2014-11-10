@@ -77,6 +77,6 @@ end
 
     
     def topic_params
-      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message,:tag_list,:query,:search)
+      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message,:tag_list,)
     end
 end
