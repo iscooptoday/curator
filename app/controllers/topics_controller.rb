@@ -8,14 +8,12 @@ class TopicsController < ApplicationController
  
 
 def index
-
-if params[:query].present?
-    @topics = Topic.search_by_welcome_message(params[:query])
    
-elsif   params[:tag]
+if  params[:tag]
 @topics = Topic.tagged_with(params[:tag]) 
 else
-@topics = Topic.all
+@topics = Topic.search_by_welcome_message([:query])
+
 end
 end
 
@@ -72,6 +70,6 @@ end
 
     
     def topic_params
-      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message,:tag_list,:query)
+      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message,:tag_list,)
     end
 end
