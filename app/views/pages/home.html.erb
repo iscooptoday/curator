@@ -7,8 +7,7 @@
 
 <%= form_tag topics_path, method: :get do %>
   <p>
-    
-    <%= text_field_tag :query, params[:query] %>
+    <%= f.text_field :author %>
     <%= submit_tag "Search", name: nil %>
   </p>
 <% end %>

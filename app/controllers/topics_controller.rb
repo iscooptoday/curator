@@ -12,7 +12,7 @@ def index
 if  params[:tag]
 @topics = Topic.tagged_with(params[:tag]) 
 else
-@topics = Topic.search_by_welcome_message([:query])
+@topics = Topic.search_by_welcome_message(:author)
 
 end
 end
