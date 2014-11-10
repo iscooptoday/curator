@@ -8,7 +8,7 @@ SQL
 end
 def down
 ActiveRecord::Base.connection.execute <<-SQL
-DROP INDEX index_topics_on_author;
+DROP INDEX index_topics_on_welcome_message;
 
 
 SQL

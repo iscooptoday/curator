@@ -9,7 +9,7 @@ CREATE OR REPLACE VIEW topic_searches AS
 
 SELECT topics.id AS searchable_id,
 'topic' AS searchable_type,
-topics.author AS term
+topics.welcome_message AS term
 FROM topics
 
 SQL

@@ -24,7 +24,7 @@
 
     <h3> MY SUBSCRIPTIONS</h3>
     <% current_user.followees(Topic).each do |topic| %>
-    <%= link_to topic.author, topic_path(topic) %> by 
+    <%= link_to topic.description, topic_path(topic) %> by 
     <%= topic.user.user_name  %><br> published <b style="color:red"><%= topic.frequency if topic.frequency %></b></p>
   
   <% end %>        
