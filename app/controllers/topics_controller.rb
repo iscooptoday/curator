@@ -8,11 +8,14 @@ class TopicsController < ApplicationController
  
 
 def index
-  # if a tag is clicked only fetch topics with that tag
-  if params[:tag]
+
+if params[:search].present?
+@topics = TopicSearch.new(query: params[:search]).results
+ # if a tag is clicked only fetch topics with that tag
+  elsif params[:tag]
     @topics = Topic.tagged_with(params[:tag])
   else
-    @topics = T0pic.all
+    @topics = Topic.all
   end
 end
 
@@ -74,6 +77,6 @@ end
 
     
     def topic_params
-      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message,:tag_list)
+      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message,:tag_list,:query,:search)
     end
 end
