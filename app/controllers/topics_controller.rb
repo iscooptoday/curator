@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
 
 def index
 
-  if params[:search].present?
+  if params[:search]
 @topics = TopicSearch.new(query: params[:search]).results
 elsif params[:tag]
 @topics = Topic.tagged_with(params[:tag]) 
