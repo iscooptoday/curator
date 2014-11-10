@@ -12,14 +12,6 @@ SELECT topics.id AS searchable_id,
 topics.author AS term
 FROM topics
 
-UNION
-
-
-SELECT topics.id AS searchable_id,
-'topic' AS searchable_type,
-users.user_name AS term
-FROM topics
-
 SQL
 
 end
