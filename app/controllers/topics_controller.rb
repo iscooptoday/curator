@@ -8,10 +8,7 @@ class TopicsController < ApplicationController
  
 
 def index
-
-  if params[:search]
-@topics = TopicSearch.new(query: params[:search]).results
-elsif params[:tag]
+if params[:tag]
 @topics = Topic.tagged_with(params[:tag]) 
 else
 @topics = Topic.all

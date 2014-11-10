@@ -3,14 +3,6 @@
       
     <% if user_signed_in? %>
 
-    <%= form_tag({:controller=>"topics", :action=>"index"}, :method=> "get") do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search" %>
-    <% end %>
-   
-
-
-
     <%# showing all the tags each showing boldness according to frequency the styling is in topics.css.scss%>
     <h3> POPULAR CATEGORIES</h3>
     <div id="tag_cloud">

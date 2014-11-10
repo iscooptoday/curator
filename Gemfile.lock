@@ -78,7 +78,6 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.1)
-    nokogiri (1.5.11)
     nokogiri (1.5.11-x86-mingw32)
     orm_adapter (0.5.0)
     pg (0.17.1-x86-mingw32)
@@ -135,8 +134,6 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.9-x86-mingw32)
-    textacular (3.2.0)
-      activerecord (>= 3.0, < 4.2)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -155,7 +152,6 @@ GEM
       json (>= 1.8.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.6)
     unf_ext (0.0.6-x86-mingw32)
     uuidtools (2.1.4)
     warden (1.2.3)
@@ -181,6 +177,5 @@ DEPENDENCIES
   sir-trevor-rails!
   socialization
   sqlite3
-  textacular
   twilio-ruby (~> 3.12)
   uglifier (>= 1.3.0)
