@@ -4,8 +4,8 @@
     <% @topics.each do |topic| %>   
     <div class="topics">
     <ul> 
-        <li><%= link_to topic.description, topic_path(topic) %> by 
-     <%= topic.author if topic.author %><br> published <b style="color:red"><%= topic.frequency if topic.frequency %></b></li>
+        <li> <%= link_to topic.description, topic_path(topic) %> by 
+     <%= topic.user.user_name if topic.user.user_name %><br> published <b style="color:red"><%= topic.frequency if topic.frequency %></b></li>
    </ul>
     </div>
     <% end %>
