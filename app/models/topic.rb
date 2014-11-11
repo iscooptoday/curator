@@ -1,6 +1,5 @@
 class Topic < ActiveRecord::Base
-	include PgSearch
-	pg_search_scope :search_by_welcome_message, :against => :welcome_message
+	
 	
 	validates_uniqueness_of :description
 
