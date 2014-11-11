@@ -8,7 +8,8 @@ Curator::Application.routes.draw do
   get '/:description',      to: 'topics#show', as: 'topic'
   patch '/:description',      to: 'topics#update', as: 'update_topic'
   get 'tags/:tag', to: 'topics#index', as: :tag
-  get '/topics?utf8=✓&query',      to: 'topics#index', as: 'topicsearch'
+  get 'topics/:query',      to: 'topics#index', as: 'search'
+
   
   
     
