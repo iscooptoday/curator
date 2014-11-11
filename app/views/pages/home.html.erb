@@ -2,17 +2,13 @@
      <div>
       
     <% if user_signed_in? %>
-
    
 
-<%= form_tag topics_path, method: :get do %>
-  <p>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", name: nil %>
-  </p>
-<% end %>
 
 
+
+
+  
 
 
 
@@ -37,7 +33,7 @@
     <h3> MY SUBSCRIPTIONS</h3>
     <% current_user.followees(Topic).each do |topic| %>
     <%= link_to topic.description, topic_path(topic) %> by 
-    <%= topic.user.user_name  %><br> published <b style="color:red"><%= topic.frequency if topic.frequency %></b></p>
+    <%= topic.author if topic.author  %><br> published <b style="color:red"><%= topic.frequency if topic.frequency %></b></p>
   
   <% end %>        
   <% else %>

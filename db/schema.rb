@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109035133) do
+ActiveRecord::Schema.define(version: 20141111075005) do
 
   create_table "attached_images", force: true do |t|
     t.datetime "created_at"

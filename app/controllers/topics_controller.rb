@@ -9,10 +9,18 @@ class TopicsController < ApplicationController
 
 def index
    
+
+
 if  params[:tag]
 @topics = Topic.tagged_with(params[:tag]) 
+elsif
+# it checks the author field for the search keyword
+
+params[:search]
+@topics = Topic.all.where(author: params[:search])
 else
-@topics = Topic.search_by_welcome_message(:query)
+  @topics= Topic.all
+
 
 end
 end

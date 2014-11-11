@@ -8,6 +8,8 @@ Curator::Application.routes.draw do
   get '/:description',      to: 'topics#show', as: 'topic'
   patch '/:description',      to: 'topics#update', as: 'update_topic'
   get 'tags/:tag', to: 'topics#index', as: :tag
+  match 'search/:search', to: 'topics#index', via: [:get, :post], as: :search 
+
   
 
   

@@ -1,5 +1,6 @@
 class Topic < ActiveRecord::Base
-	
+
+before_save { |topic| topic.author = topic.author.upcase }
 	
 	validates_uniqueness_of :description
 
