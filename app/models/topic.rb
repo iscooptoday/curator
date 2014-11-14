@@ -1,6 +1,6 @@
 class Topic < ActiveRecord::Base
 
-before_save { |topic| topic.author = topic.author.upcase }
+
 	
 	validates_uniqueness_of :description
 
@@ -13,8 +13,9 @@ before_save { |topic| topic.author = topic.author.upcase }
 		
   # It returns the topicss whose authors field contain one or more words that form the query
   def self.search(query)
+    query = query.upcase
     # where(:author, query) -> This would return an exact match of the query
-    where("author like ?", "%#{query}%") 
+    where("upper(author) like ?", "%#{query}%") 
   end
   
 
