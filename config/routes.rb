@@ -6,12 +6,13 @@ Curator::Application.routes.draw do
   get "my_topics" => "pages#my_topics"
   get "send_text" => "text_sender"
   get 'tags/:tag', to: 'topics#index', as: :tag
+
+  
+  
   match 'search', to: 'topics#index', via: [:get, :post], as: :search 
  
-get '/:description',      to: 'topics#show', as: 'topicc'
+  get '/:description',      to: 'topics#show', as: 'topic'
   patch '/:description',      to: 'topics#update', as: 'update_topic'
-  
-  
     
   resources :links
   resources :topics
