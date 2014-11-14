@@ -10,29 +10,7 @@
 </head>
 <body>
 
-<%# facebook sdk for web stuff. make  xfbml to true if youu start using social plugins%>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '373447522818519',
-      xfbml      : false,
-      version    : 'v2.2'
-    
-    });
   
-
-
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<%# end of facebook sdk for web stuff %>
 
 
 <%= render 'layouts/header' %>

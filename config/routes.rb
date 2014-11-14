@@ -5,27 +5,19 @@ Curator::Application.routes.draw do
   get "feed" => "pages#feed"
   get "my_topics" => "pages#my_topics"
   get "send_text" => "text_sender"
-  get '/:description',      to: 'topics#show', as: 'topic'
-  patch '/:description',      to: 'topics#update', as: 'update_topic'
   get 'tags/:tag', to: 'topics#index', as: :tag
-  match 'search/:search', to: 'topics#index', via: [:get, :post], as: :search 
-
-  
+  match 'search', to: 'topics#index', via: [:get, :post], as: :search 
+ 
 
   
   
     
   resources :links
-
   resources :topics
+  devise_for :users
 
-
-
-  
-  
-  
- devise_for :users
-
+  get '/:description',      to: 'topics#show', as: 'topicc'
+  patch '/:description',      to: 'topics#update', as: 'update_topic'
  
 
 

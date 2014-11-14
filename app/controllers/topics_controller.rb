@@ -8,28 +8,24 @@ class TopicsController < ApplicationController
  
 
 def index
-   
-
-
-if  params[:tag]
+  if  params[:tag]
 @topics = Topic.tagged_with(params[:tag]) 
-elsif
+else
 # it checks the author field for the search keyword
 
-params[:search]
-@topics = Topic.all.where(author: params[:search])
-else
-  @topics= Topic.all
 
+@topics = Topic.search(params[:search])
+  
 
 end
 end
 
 
+def show
+@topic=Topic.find_by_description(params[:description])
+end
 
-
-  def show
-  end
+  
 
   def new
     @topic = current_user.topics.build
@@ -78,6 +74,6 @@ end
 
     
     def topic_params
-      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message,:tag_list,)
+      params.require(:topic).permit(:description,:author,:user_id,:frequency,:time,:welcome_message,:tag_list,:search)
     end
 end

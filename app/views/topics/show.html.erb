@@ -5,9 +5,9 @@
 
   <div align="center">
 
- <p> by <%=@topic.author if @topic.author %> </P>
+ <h2 class="topic-author"> by <%=@topic.author if @topic.author %> </h2>
 
-  <p><%=@topic.welcome_message if @topic.welcome_message %></P>
+  <h4 class="topic-welcome"><%=@topic.welcome_message if @topic.welcome_message %></h4>
   
   published <b style="color:red"><%=@topic.frequency if @topic.frequency %></b> 
   </div><br><br>
