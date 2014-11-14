@@ -13,7 +13,6 @@ gem 'bootstrap-sass'
 gem 'aws-sdk', '~> 1.20.0'
 gem 'twilio-ruby', '~> 3.12'
 gem   'sinatra'
-gem 'sir-trevor-rails', git: 'https://github.com/maxmcd/sir-trevor-rails.git'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 
