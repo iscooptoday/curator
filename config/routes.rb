@@ -8,7 +8,8 @@ Curator::Application.routes.draw do
   get 'tags/:tag', to: 'topics#index', as: :tag
   match 'search', to: 'topics#index', via: [:get, :post], as: :search 
  
-
+get '/:description',      to: 'topics#show', as: 'topicc'
+  patch '/:description',      to: 'topics#update', as: 'update_topic'
   
   
     
@@ -16,8 +17,7 @@ Curator::Application.routes.draw do
   resources :topics
   devise_for :users
 
-  get '/:description',      to: 'topics#show', as: 'topicc'
-  patch '/:description',      to: 'topics#update', as: 'update_topic'
+  
  
 
 
