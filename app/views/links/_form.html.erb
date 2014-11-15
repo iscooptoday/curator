@@ -14,15 +14,7 @@
 
   <%= f.collection_select :topic_id, current_user.topics, :id , :description %><br><br>
 
-  <%= f.sir_trevor_text_area :stuff, class: "result" %>
-   
-   <%# sirtrevor javascript %> 
-   <script language="javascript" type="text/javascript">
-   $(function(){
-  var editor = new SirTrevor.Editor({ el: $('.sir-trevor-area') });
-});
-</script>
-
+  
 
   
    <%# embedly stuff %> 
