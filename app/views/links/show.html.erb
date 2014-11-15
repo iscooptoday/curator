@@ -6,6 +6,27 @@
  <a class= "embedly-card" href= "<%= @link.url3 %>"></a>
  <a class= "embedly-card" href= "<%= @link.url4 %>"></a>
  <a class= "embedly-card" href= "<%= @link.url5 %>"></a>
+
+
+<% if current_user.likes?(@link) %>  
+
+  <%= form_for(@link, url: link_path(@link)) do |f| %>
+  
+  <div class = "actions"> <%= f.submit "Unlike", class: "btn btn-default btn-lg" %> <B style="color:#3498db"><%=@link.likers(User).count %> like(s) </B> </div> 
+  <% end %> <br> 
+     
+   <% else %>
+  
+  <%= form_for(@link, url: link_path(@link)) do |f| %>
+  <div class = "actions"> <%= f.submit "like" ,class: "btn btn-default btn-lg" %> <B style="color:#3498db"><%=@link.likers(User).count %> like(s) </B> </div>
+  <% end %> <br>
+
+<% end %> 
+
+
+
+
+
  
   
 

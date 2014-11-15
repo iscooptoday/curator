@@ -72,15 +72,16 @@ class LinksController < ApplicationController
 
   
   def update
-    
-      if @link.update(link_params)
-        redirect_to @link, notice: 'issue was successfully updated.' 
       
-      else
-        render action: 'edit' 
-        
-      end
-    end
+      if current_user.likes?(@link)
+        current_user.unlike!(@link)
+        redirect_to @link, notice: 'you have unliked this post.'
+        else 
+
+      current_user.like!(@link)
+       redirect_to @link, notice: 'you have liked this post.'
+  end
+  end
 
   
   def destroy
