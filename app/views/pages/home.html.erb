@@ -13,12 +13,12 @@
 
 <%# if dont have any newsletter%>
 <% if current_user.topics.blank? %>
-<h3> MY NEWSLETTERS:</h3>
+<h3> MY PAGES:</h3>
 <P> YOU DONT HAVE ANY NEWSLETTERS YET. WHY DONT YOU CREATE ONE START SHARING WITH YOUR FRIENDS</P>
 
 <% else %>
 
-  <h3> MY NEWSLETTERS:</h3>
+  <h3> MY PAGES:</h3>
    <% current_user.topics.order("created_at DESC").each do |l| %>
   <P> <%= link_to l.description, topic_path(l) %></P>
 
@@ -46,8 +46,8 @@
 
   <% else %>
      
-  <p>Iscoop lets you create a personal newsletter that your friends and 
-    family can subscribe to.<br> You can share anything in your newsletter. you can upload photos and embed anything you come across on the internet that you like<br>Why a personal newsletter? a lot of the stuff you post on social media gets seen by a small number of your fiends. Having a personal newsletter guarantees that all your subscribers will get anything you share because they will get a text message anytime you publish something in you personal newsletter </p> 
+  <p>Iscoop lets you create a personal page where you can upload photos and embed your favorite videos and articles. Your friends and family can subscribe to your page and anytime you post on your page all your subscribers will get a text message with a link to your post.
+  <br>Why a personal page? a lot of the stuff you post on social media gets seen by a small number of your fiends. but posting to your  personal page will guarantees that all your subscribers will get anything you share </p> 
       
   <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
   <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-lg" %><br><br>
