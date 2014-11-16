@@ -6,34 +6,44 @@
     
   <div>
   <%= form_tag search_path, method: 'get'  %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search", name: nil %>
+  <%= text_field_tag :search, params[:search]  %>
+  <%= submit_tag "Search for people", name: nil %>
 
-</div>
+</div><br><br><br><br>
 
+<%# if dont have any newsletter%>
+<% if current_user.topics.blank? %>
+<h3> MY NEWSLETTERS:</h3>
+<P> YOU DONT HAVE ANY NEWSLETTERS YET. WHY DONT YOU CREATE ONE START SHARING WITH YOUR FRIENDS</P>
 
+<% else %>
 
+  <h3> MY NEWSLETTERS:</h3>
+   <% current_user.topics.order("created_at DESC").each do |l| %>
+  <P> <%= link_to l.description, topic_path(l) %></P>
 
-
-
-
-    <%# showing all the tags each showing boldness according to frequency the styling is in topics.css.scss%>
-    <h3> POPULAR CATEGORIES</h3>
-    <div id="tag_cloud">
-     <% tag_cloud Topic.tag_counts, %w{s m l} do |tag, css_class| %>
-     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-     <% end %>
-   </div><br><br><br><br>
-
-
+<% end %> 
+<% end %> 
                   
 
-    <h3> MY SUBSCRIPTIONS</h3>
+    <%# if not following any newsletter%>
+    <% if current_user.followees(Topic).blank? %>
+     
+     <h3> MY SUBSCRIPTIONS:</h3>
+    <P> YOU ARE CURRENTLY NOT SUBSCRIBED TO ANY NEWSLETTERS YOU CAN SEARCH A FRIEND'S NAME TO FIND OUT IF THEY HAVE A NEWSLETTER</P>
+
+    <% else %>
+
+
+    <h3> MY SUBSCRIPTIONS:</h3>
     <% current_user.followees(Topic).each do |topic| %>
-    <%= link_to topic.description, topic_path(topic) %> by 
-    <%= topic.author if topic.author  %><br> published <b style="color:red"><%= topic.frequency if topic.frequency %></b></p>
+    <p><%= link_to topic.description, topic_path(topic) %> by 
+    <%= topic.author if topic.author  %></p>
   
-  <% end %>        
+  <% end %> 
+  <% end %>       
+  
+
   <% else %>
      
   <p>Iscoop lets you create a personal newsletter that your friends and 

@@ -3,11 +3,6 @@
 <iframe src= "<%= l.url %>" frameborder="0" style="height: 400px; overflow:scroll; width: 60%" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"></iframe><br><br> 
 
 
-# adding link
- <div class="form-group">
-    <%= f.label :link %>
-    <%= f.text_field :url,class: "form-control" %>
-  </div>
 
 #view the link
 <p style=font-size:15px > <%= link_to "click to view this as a webpage", l.url,{:style=>'color:#3333D6;',:class => "css_class"} %> </p>
@@ -44,5 +39,16 @@
    </ul>
    </div>   
    <% end %>  
+
+   # tag cloud
+   
+   <%# showing all the tags each showing boldness according to frequency the styling is in topics.css.scss%>
+    <h3> POPULAR CATEGORIES</h3>
+    <div id="tag_cloud">
+     <% tag_cloud Topic.tag_counts, %w{s m l} do |tag, css_class| %>
+     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+     <% end %>
+   </div><br><br><br><br>
+
 
 
