@@ -11,11 +11,13 @@ class LinksController < ApplicationController
   end
 
     def show
+      @link_attachments = @link.link_attachments.all
   end
 
   def new
     @link = Link.new
     @topic=Topic.all 
+    @link_attachment = @link.link_attachments.build
   end
   
 
@@ -29,7 +31,11 @@ class LinksController < ApplicationController
     @link = Link.new(link_params)
     
       if @link.save
-        redirect_to @link, notice: 'issue was successfully submitted.' 
+        
+        params[:link_attachments]['avatar'].each do |a|
+          @link_attachment = @link.link_attachments.create!(:avatar => a, :link_id => @link.id)
+       end
+       redirect_to @link, notice: 'post was successfully submitted.' 
         
      
 
@@ -97,7 +103,7 @@ class LinksController < ApplicationController
 
     
     def link_params
-      params.require(:link).permit(:description,:topic_id,:stuff,:url,:url2,:url3,:url4,:url5)
+      params.require(:link).permit(:description,:topic_id,:stuff,:url,:url2,:url3,:url4,:url5,link_attachments_attributes: [:id, :link_id, :avatar])
     end
 
   end

@@ -1,5 +1,7 @@
 Curator::Application.routes.draw do
   
+  resources :link_attachments
+
   root  "pages#home"
   get "contact" => "pages#contact"
   get "feed" => "pages#feed"

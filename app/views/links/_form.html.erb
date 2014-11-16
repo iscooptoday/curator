@@ -15,8 +15,25 @@
   <%= f.collection_select :topic_id, current_user.topics, :id , :description %><br><br>
 
   
+<%# multiple image upload stuff carrierwave %> 
+
+<%= f.fields_for :link_attachments do |p| %>
+     <div class="field">
+       <%= p.label :Uload_photos %><br>
+       <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]" %>
+     </div>
+   <% end %>
 
   
+   
+
+
+
+
+
+
+
+
    <%# embedly stuff %> 
    <div class="form">
     <%= f.label :link_1 %>

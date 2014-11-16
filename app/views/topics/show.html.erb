@@ -37,10 +37,20 @@
 
 <div>
 
+
+
+
 <% @topic.links.order("created_at DESC").each do |l| %>
 
 <p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> <%= time_ago_in_words(l.created_at) %> ago</p>
 
+<%# view to show the images uploaded %> 
+ <% l.link_attachments.each do |p| %>
+  <p><%= image_tag p.avatar_url %></p>
+ <% end %>
+
+ 
+ <%# view to show the embeded stuff %>
  <a class= "embedly-card" href= "<%= l.url %>"></a>
  <a class= "embedly-card" href= "<%= l.url2 %>"></a>
  <a class= "embedly-card" href= "<%= l.url3 %>"></a>

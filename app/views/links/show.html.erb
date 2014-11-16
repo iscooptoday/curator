@@ -1,6 +1,14 @@
 <p id="notice"></p>
  
  
+<%# view to show the images uploaded %> 
+
+<% @link_attachments.each do |p| %>
+  <p><%= image_tag p.avatar_url %></p>
+<% end %>
+
+
+<%# view to show the embeded stuff %> 
  <a class= "embedly-card" href= "<%= @link.url %>"></a>
  <a class= "embedly-card" href= "<%= @link.url2 %>"></a>
  <a class= "embedly-card" href= "<%= @link.url3 %>"></a>
@@ -8,6 +16,7 @@
  <a class= "embedly-card" href= "<%= @link.url5 %>"></a>
 
 
+<%# if user already likes the post then unlike it %>
 <% if current_user.likes?(@link) %>  
 
   <%= form_for(@link, url: link_path(@link)) do |f| %>
@@ -17,6 +26,7 @@
      
    <% else %>
   
+  <%# else like it %>
   <%= form_for(@link, url: link_path(@link)) do |f| %>
   <div class = "actions"> <%= f.submit "like" ,class: "btn btn-default btn-lg" %> <B style="color:#3498db"><%=@link.likers(User).count %> like(s) </B> </div>
   <% end %> <br>
