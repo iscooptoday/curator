@@ -45,7 +45,7 @@
 <p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> <%= time_ago_in_words(l.created_at) %> ago</p>
 
 <%# view to show the message %> 
-<h4 class="link-message"><%= l.content if l.content %></h4><br><br>
+<h4 class="link-message"><%= l.stuff if l.stuff %></h4><br><br>
 
 <%# view to show the images uploaded %> 
  <% l.link_attachments.each do |p| %>

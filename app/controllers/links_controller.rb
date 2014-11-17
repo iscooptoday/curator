@@ -109,7 +109,7 @@ class LinksController < ApplicationController
 
     
     def link_params
-      params.require(:link).permit(:description,:topic_id,:content,link_attachments_attributes: [:id, :link_id, :avatar])
+      params.require(:link).permit(:description,:topic_id,:stuff,link_attachments_attributes: [:id, :link_id, :avatar])
     end
 
   end
