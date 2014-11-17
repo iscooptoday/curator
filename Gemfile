@@ -14,8 +14,11 @@ gem 'aws-sdk', '~> 1.20.0'
 gem 'twilio-ruby', '~> 3.12'
 gem   'sinatra'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'fog'
+gem "mini_magick"
 gem 'carrierwave'
 gem 'impressionist'
+gem "jquery-fileupload-rails"
 
 
 

@@ -14,142 +14,27 @@
 
   <%= f.collection_select :topic_id, current_user.topics, :id , :description %><br><br>
 
+
+
   
 <%# multiple image upload stuff carrierwave %> 
 
 <%= f.fields_for :link_attachments do |p| %>
      <div class="field">
-       <%= p.label :Uload_photos %><br>
+       <%= p.label :Upload_photos %><br>
        <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]" %>
      </div>
    <% end %>
 
-  
-   
+  <%# add message to post %> 
 
-
-
-
-
-
-
-
-   <%# embedly stuff %> 
-   <div class="form">
-    <%= f.label :link_1 %>
-    <%= f.text_field :url,placeholder:"Paste link and click embed", class: "uri",:autofocus => true %><a href="#" class="create">embed</a>
-  </div>
-
-<div class = "result"></div>
-  
-
-  
-  <script language="javascript" type="text/javascript">
-   $('.create').on('click', function () {
-    var url = $('.uri').val();
-
-    var $a = $('<a href="' + url + '"></a>');
-    $('.result').empty().append($a);
-
-    embedly('card', $a[0]);
-    return false;
-});
-
-
-</script>
-
-
-
-
-<div class="form">
-    <%= f.label :link_2 %>
-    <%= f.text_field :url, class: "uri2",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create2">embed</a>
-  </div><br>
-
-  <div class="result2"></div>
-
-  
-  <script language="javascript" type="text/javascript">
-   $('.create2').on('click', function () {
-    var url = $('.uri2').val();
-
-    var $a = $('<a href="' + url + '"></a>');
-    $('.result2').empty().append($a);
-
-    embedly('card', $a[0]);
-    return false;
-});
-</script>
-
-<div class="form">
-    <%= f.label :link_3 %>
-    <%= f.text_field :url3, class: "uri3",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create3">embed</a>
-  </div><br>
-
-  <div class="result3"></div>
-
-  
-  <script language="javascript" type="text/javascript">
-   $('.create3').on('click', function () {
-    var url = $('.uri3').val();
-
-    var $a = $('<a href="' + url + '"></a>');
-    $('.result3').empty().append($a);
-
-    embedly('card', $a[0]);
-    return false;
-});
-
-</script>
-
-
-<div class="form">
-    <%= f.label :link_4 %>
-    <%= f.text_field :url4, class: "uri4",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create4">embed</a>
-  </div><br>
-
-  <div class="result4"></div>
-
-  
-  <script language="javascript" type="text/javascript">
-   $('.create4').on('click', function () {
-    var url = $('.uri4').val();
-
-    var $a = $('<a href="' + url + '"></a>');
-    $('.result4').empty().append($a);
-
-    embedly('card', $a[0]);
-    return false;
-});
-
-</script>
-
-
-<div class="form">
-    <%= f.label :link_5 %>
-    <%= f.text_field :url5, class: "uri5",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create5">embed</a>  </div><br>
-
-  <div class="result5"></div>
-
-  
-  <script language="javascript" type="text/javascript">
-   $('.create5').on('click', function () {
-    var url = $('.uri5').val();
-
-    var $a = $('<a href="' + url + '"></a>');
-    $('.result5').empty().append($a);
-
-    embedly('card', $a[0]);
-    return false;
-});
-
-</script>
-
-
-
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_area :content, class: "form-control",placeholder:"add message for your subscribers..optional",:autofocus => true %>
+  </div><br><br><br>
 
   <div class="actions">
-    <%= f.submit "PUBLISH" %>
+    <%= f.submit "POST" %>
   </div><br>
 
 

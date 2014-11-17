@@ -13,32 +13,6 @@
 <% if current_user.topics.blank? %>
 
 
-#your feed
-<% if user_signed_in? %>
- 
-<% current_user.links.order("created_at DESC").each do |l| %>
-<div>
-<p style="font-family:tahoma;color:#7f8c8d;margin-left:0px"> posted <%= time_ago_in_words(l.created_at ) %> ago</p>
-</div>
-
- <p><%= l.content %></p>
-<a class= "embedly-card" href= "<%= l.url %>"> some title</a>
-
-<% end %> 
-<% end %> 
-
-
-<div class="container">
-    
-    <% @topics.each do |topic| %>   
-    <div class="topics">
-    <ul> 
-        <li> <%= link_to topic.description, topic_path(topic) %> by
-            <%= topic.author if topic.author %>
-           <p> <%= topic.welcome_message if topic.welcome_message %></p>
-   </ul>
-   </div>   
-   <% end %>  
 
    # tag cloud
    
@@ -50,5 +24,127 @@
      <% end %>
    </div><br><br><br><br>
 
+ # embedding 5 links on links_form
+
+ <% embedly stuff %> 
+   <div class="form">
+    <%= f.label :link_1 %>
+    <%= f.text_field :url,placeholder:"Paste link and click embed", class: "uri",:autofocus => true %><a href="#" class="create">embed</a>
+  </div>
+
+<div class = "result"></div>
+  
+
+  
+  <script language="javascript" type="text/javascript">
+   $('.create').on('click', function () {
+    var url = $('.uri').val();
+
+    var $a = $('<a href="' + url + '"></a>');
+    $('.result').empty().append($a);
+
+    embedly('card', $a[0]);
+    return false;
+});
+
+
+</script>
+
+
+
+
+<div class="form">
+    <%= f.label :link_2 %>
+    <%= f.text_field :url, class: "uri2",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create2">embed</a>
+  </div><br>
+
+  <div class="result2"></div>
+
+  
+  <script language="javascript" type="text/javascript">
+   $('.create2').on('click', function () {
+    var url = $('.uri2').val();
+
+    var $a = $('<a href="' + url + '"></a>');
+    $('.result2').empty().append($a);
+
+    embedly('card', $a[0]);
+    return false;
+});
+</script>
+
+<div class="form">
+    <%= f.label :link_3 %>
+    <%= f.text_field :url3, class: "uri3",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create3">embed</a>
+  </div><br>
+
+  <div class="result3"></div>
+
+  
+  <script language="javascript" type="text/javascript">
+   $('.create3').on('click', function () {
+    var url = $('.uri3').val();
+
+    var $a = $('<a href="' + url + '"></a>');
+    $('.result3').empty().append($a);
+
+    embedly('card', $a[0]);
+    return false;
+});
+
+</script>
+
+
+<div class="form">
+    <%= f.label :link_4 %>
+    <%= f.text_field :url4, class: "uri4",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create4">embed</a>
+  </div><br>
+
+  <div class="result4"></div>
+
+  
+  <script language="javascript" type="text/javascript">
+   $('.create4').on('click', function () {
+    var url = $('.uri4').val();
+
+    var $a = $('<a href="' + url + '"></a>');
+    $('.result4').empty().append($a);
+
+    embedly('card', $a[0]);
+    return false;
+});
+
+</script>
+
+
+<div class="form">
+    <%= f.label :link_5 %>
+    <%= f.text_field :url5, class: "uri5",placeholder:" Paste link and click embed",:autofocus => true %><a href="#" class="create5">embed</a>  </div><br>
+
+  <div class="result5"></div>
+
+  
+  <script language="javascript" type="text/javascript">
+   $('.create5').on('click', function () {
+    var url = $('.uri5').val();
+
+    var $a = $('<a href="' + url + '"></a>');
+    $('.result5').empty().append($a);
+
+    embedly('card', $a[0]);
+    return false;
+});
+
+</script>
+
+
+# showing embed on the views
+
+<%# view to show the embeded stuff %> 
+ <a class= "embedly-card" href= "<%= @link.url %>"></a>
+ <a class= "embedly-card" href= "<%= @link.url2 %>"></a>
+ <a class= "embedly-card" href= "<%= @link.url3 %>"></a>
+ <a class= "embedly-card" href= "<%= @link.url4 %>"></a>
+ <a class= "embedly-card" href= "<%= @link.url5 %>"></a>
 
 
