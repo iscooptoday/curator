@@ -5,5 +5,8 @@ class Link < ActiveRecord::Base
 
 	has_many :link_attachments
    accepts_nested_attributes_for :link_attachments
+    
+   # for impressions 
+   is_impressionable
 	
  end

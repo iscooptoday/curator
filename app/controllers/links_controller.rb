@@ -5,13 +5,19 @@ class LinksController < ApplicationController
   
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
- 
+  #shows impressions on the link show page
+  impressionist :actions=>[:show]
+
+
+
   def index
     @links = Link.all.order("created_at DESC")
   end
 
     def show
       @link_attachments = @link.link_attachments.all
+      @link = Link.find(params[:id])
+      impressionist(@link)
   end
 
   def new

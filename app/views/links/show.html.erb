@@ -21,15 +21,28 @@
 
   <%= form_for(@link, url: link_path(@link)) do |f| %>
   
-  <div class = "actions"> <%= f.submit "Unlike", class: "btn btn-default btn-lg" %> <B style="color:#3498db"><%=@link.likers(User).count %> like(s) </B> </div> 
+  <div class = "actions"> <%= f.submit "Unlike", class: "btn btn-default btn-lg" %> <B style="color:#3498db"><%=@link.likers(User).count %> like(s) </B> 
+
+  	<%# number of views %>
+  	<B style="color:#7f8c8d"> <%= "#{@link.impressionist_count} view(s)" %> </B>
+  </div> 
   <% end %> <br> 
      
    <% else %>
   
   <%# else like it %>
   <%= form_for(@link, url: link_path(@link)) do |f| %>
-  <div class = "actions"> <%= f.submit "like" ,class: "btn btn-default btn-lg" %> <B style="color:#3498db"><%=@link.likers(User).count %> like(s) </B> </div>
-  <% end %> <br>
+  <div class = "actions"> <%= f.submit "like" ,class: "btn btn-default btn-lg" %> 
+
+     <%# number of likes %>
+  	<B style="color:#3498db"><%=@link.likers(User).count %> like(s) </B>  
+
+  	<%# number of views %>
+  	<B style="color:#7f8c8d"> <%= "#{@link.impressionist_count} view(s)" %> </B></div>
+
+     
+  
+  <% end %> <br><br><br><br>
 
 <% end %> 
 

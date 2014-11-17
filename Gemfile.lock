@@ -57,7 +57,11 @@ GEM
     erubis (2.7.0)
     execjs (2.2.1)
     hike (1.2.3)
+    httpclient (2.5.3.3)
     i18n (0.6.11)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -72,6 +76,7 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.1)
+    nokogiri (1.5.11)
     nokogiri (1.5.11-x86-mingw32)
     orm_adapter (0.5.0)
     pg (0.17.1-x86-mingw32)
@@ -155,6 +160,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
+  impressionist
   jbuilder (~> 1.2)
   jquery-rails
   pg

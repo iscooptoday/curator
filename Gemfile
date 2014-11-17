@@ -15,6 +15,7 @@ gem 'twilio-ruby', '~> 3.12'
 gem   'sinatra'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'carrierwave'
+gem 'impressionist'
 
 
 
