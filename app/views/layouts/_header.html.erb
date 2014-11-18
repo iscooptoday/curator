@@ -24,28 +24,6 @@
      <li><%= link_to "SIGN IN", new_user_session_path %></li>
      <% end %>
     </ul>
-  
-  <!-- search -->
- 
- <%= form_tag search_path, method: 'get' , :class => 'navbar-form navbar-left', :role =>  'search' %>
- <div class="form-group">
-  <%= text_field_tag :search, :class => 'form-control', params[:search]  %>
-  </div>
-  <%= submit_tag "Search for people", :class => 'btn btn-default' name: nil %>
-
-
-        
-          
-        
-        
-
-
-
-
-
-
-
-
 
   </div>
 </nav>
