@@ -6,22 +6,21 @@
 
 <%# if dont have any newsletter%>
 <% if current_user.topics.blank? %>
-<h3> MY PAGES:</h3>
+
 <P> YOU HAVENT CREATED A PAGE YET. WHY DONT YOU CREATE ONE START SHARING WITH YOUR FRIENDS</P>
+
+<%= link_to "CREATE PAGE", new_topic_path, class: "btn btn-default btn-lg" %>
 
 <% else %>
 
-<%= link_to "SHARE PHOTOS", new_link_path, class: "btn btn-default btn-lg" %>
+<%= link_to "SHARE PHOTOS", new_link_path, class: "btn btn-default btn-lg" %><br><br><br>
 
 
 
 
-
-
-
-  <h3> MY PAGES:</h3>
+  <h3> MY PAGE(S):</h3>
    <% current_user.topics.order("created_at DESC").each do |l| %>
-  <P> <%= link_to l.description, topic_path(l) %></P>
+  <P> <%= link_to l.description, topic_path(l) %></P><br><br>
 
 <% end %> 
 <% end %> 
