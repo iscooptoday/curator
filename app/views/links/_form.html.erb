@@ -22,10 +22,17 @@
 <%= f.fields_for :link_attachments do |p| %>
      <div class="field">
        <%= p.label :Upload_photos %><br>
-       <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]", class: "multi with-preview"  %>
+       <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]" %>
      </div>
    <% end %>
 
+<div class="fileupload fileupload-new" data-provides="fileupload">
+  <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+  <div>
+    <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+  </div>
+</div>
 
 
   
