@@ -12,6 +12,7 @@
     </div>
   <% end %>
 
+  <%= f.label :PAGE %>
   <%= f.collection_select :topic_id, current_user.topics, :id , :description %><br><br>
 
 
@@ -25,25 +26,6 @@
        <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]" %>
      </div>
    <% end %>
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
