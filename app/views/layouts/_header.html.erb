@@ -11,26 +11,11 @@
     
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-      
-      <li><%= link_to 'CONTACT US', contact_path %></li>
-      <li><%= link_to "CREATE A PAGE", new_topic_path %></li>
-      <li><%= link_to "POST", new_link_path %></li>
-      <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li> 
-     <% else %>
-     <li><%= link_to "SIGN IN", new_user_session_path %></li>
-     <% end %>
-    </ul>
-
 <!-- search  -->
 <form action="/search" method="get" class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" name="search" params="search" class="form-control" placeholder="Search for people">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
       </form>
 
 
@@ -44,6 +29,24 @@
 
 
 
+
+
+
+  
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+      
+      <li><%= link_to 'CONTACT US', contact_path %></li>
+      <li><%= link_to "CREATE A PAGE", new_topic_path %></li>
+      <li><%= link_to "POST", new_link_path %></li>
+      <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li> 
+     <% else %>
+     <li><%= link_to "SIGN IN", new_user_session_path %></li>
+     <% end %>
+    </ul>
 
   </div>
 </nav>

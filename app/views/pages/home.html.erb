@@ -3,27 +3,6 @@
       
     <% if user_signed_in? %>
 
-    
- 
-<div style="padding:20px;">
-    <form action="/search" method="get" class="form-search form-inline">
-        <div class="input-append">
-            <input type="text" name="search" params="search" class="search-query" placeholder="Search for people" />
-            <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-    </form>
-</div>
-
-
-
-
-
-
-
-
-
-
-
 
 <%# if dont have any newsletter%>
 <% if current_user.topics.blank? %>
