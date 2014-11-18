@@ -7,9 +7,11 @@
 <%# if dont have any newsletter%>
 <% if current_user.topics.blank? %>
 <h3> MY PAGES:</h3>
-<P> YOU DONT HAVE ANY NEWSLETTERS YET. WHY DONT YOU CREATE ONE START SHARING WITH YOUR FRIENDS</P>
+<P> YOU HAVENT CREATED A PAGE YET. WHY DONT YOU CREATE ONE START SHARING WITH YOUR FRIENDS</P>
 
 <% else %>
+
+<%= render 'links/_form' %>
 
   <h3> MY PAGES:</h3>
    <% current_user.topics.order("created_at DESC").each do |l| %>
@@ -19,23 +21,7 @@
 <% end %> 
                   
 
-    <%# if not following any newsletter%>
-    <% if current_user.followees(Topic).blank? %>
-     
-     <h3> MY SUBSCRIPTIONS:</h3>
-    <P> YOU ARE CURRENTLY NOT SUBSCRIBED TO ANY NEWSLETTERS YOU CAN SEARCH A FRIEND'S NAME TO FIND OUT IF THEY HAVE A NEWSLETTER</P>
-
-    <% else %>
-
-
-    <h3> MY SUBSCRIPTIONS:</h3>
-    <% current_user.followees(Topic).each do |topic| %>
-    <p><%= link_to topic.description, topic_path(topic) %> by 
-    <%= topic.author if topic.author  %></p>
-  
-  <% end %> 
-  <% end %>       
-  
+    
 
   <% else %>
      
