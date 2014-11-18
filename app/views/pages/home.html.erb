@@ -4,18 +4,26 @@
     <% if user_signed_in? %>
 
     
-  <div>
-  <%= form_tag search_path, method: 'get'  %>
-  <%= text_field_tag :search, params[:search]  %>
-  <%= submit_tag "Search for people", name: nil %>
-
-</div><br><br><br><br>
-
-    <div style="padding:20px;">
-    <form action="/search" method="get" class="form-search form-inline" >
-        <input type="text" name="search" params="search" class="search-query" placeholder="Search..." />
+ 
+<div style="padding:20px;">
+    <form action="/search" method="get" class="form-search form-inline">
+        <div class="input-append">
+            <input type="text" name="search" params="search" class="search-query" placeholder="Search for people" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
     </form>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 <%# if dont have any newsletter%>
