@@ -11,20 +11,7 @@
     
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-      
-      <li><%= link_to 'CONTACT US', contact_path %></li>
-      <li><%= link_to "CREATE A PAGE", new_topic_path %></li>
-      <li><%= link_to "POST", new_link_path %></li>
-      <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li> 
-     <% else %>
-     <li><%= link_to "SIGN IN", new_user_session_path %></li>
-     <% end %>
-    </ul>
-  
+<!-- search -->
 <div class="col-sm-3 col-md-3 pull-right">
             <form class="navbar-form" role="search">
                 <div class="input-group">
@@ -43,9 +30,19 @@
 
 
 
-
-
-
-
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+      
+      <li><%= link_to 'CONTACT US', contact_path %></li>
+      <li><%= link_to "CREATE A PAGE", new_topic_path %></li>
+      <li><%= link_to "POST", new_link_path %></li>
+      <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li> 
+     <% else %>
+     <li><%= link_to "SIGN IN", new_user_session_path %></li>
+     <% end %>
+    </ul>
+  
   </div>
 </nav>
