@@ -5,9 +5,7 @@ class PagesController < ApplicationController
   	@link=Link.new
   	@links=Link.all
 
-  	@link_attachment=Link_attachment.new
-  	@link_attachments=Link_attachments.all
-  
+  	
   
     end
 
