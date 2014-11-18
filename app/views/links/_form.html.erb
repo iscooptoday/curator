@@ -24,7 +24,7 @@
      <div class="field">
        <%= p.label :Upload_photos %><br>
        <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]" %>
-     </div><br><br><br><br>
+     </div><br><br><br>
    <% end %>
 
 
@@ -34,7 +34,7 @@
   <div class="form-group">
     <%= f.label :message %>
     <%= f.text_area :stuff, class: "form-control",placeholder:"add message for your subscribers..optional",:autofocus => true %>
-  </div><br><br><br>
+  </div><br><br>
 
   <div class="actions">
     <%= f.submit "POST" %>
