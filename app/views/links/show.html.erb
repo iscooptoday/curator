@@ -8,7 +8,7 @@
 <%# view to show the images uploaded %> 
 
 <% @link_attachments.each do |p| %>
-  <p><%= image_tag p.avatar_url %></p>
+  <p><%= image_tag p.avatar_url, class="img-responsive" %></p>
 <% end %>
 
 
