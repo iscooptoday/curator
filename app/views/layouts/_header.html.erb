@@ -11,28 +11,6 @@
     
   </div>
 
-<!-- search  -->
-<form action="/search" method="get" class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" name="search" params="search" class="form-control" placeholder="Search for people">
-        </div>
-      </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -47,6 +25,14 @@
      <li><%= link_to "SIGN IN", new_user_session_path %></li>
      <% end %>
     </ul>
+
+    <!-- search  -->
+<form action="/search" method="get" class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" name="search" params="search" class="form-control" placeholder="Search for people">
+        </div>
+      </form>
+
 
   </div>
 </nav>
