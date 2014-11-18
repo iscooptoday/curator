@@ -22,7 +22,7 @@
 <%= f.fields_for :link_attachments do |p| %>
      <div class="field">
        <%= p.label :Upload_photos %><br>
-       <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]" %>
+       <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]",onchange: "PreviewImage();",id: "uploadImage" %>
      </div>
    <% end %>
 
@@ -30,7 +30,8 @@
 <%# preview the images %> 
 
 <img id="uploadPreview" style="width: 100px; height: 100px;" />
-<input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+
+<%# javascript for preview the images %> 
 <script type="text/javascript">
 
     function PreviewImage() {
