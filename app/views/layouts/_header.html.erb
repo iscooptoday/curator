@@ -26,25 +26,11 @@
      <% end %>
     </ul>
 
-    
-
-
- <form method = "get" action="/search" class = "pull-down  navbar-search">
-       <div class="input-append">
-       <input class="search-query input-medium"  name="search_query" params="search" type="text" placeholder="search for people" >
-        <button type = "submit "class="btn btn-large" type="button"><i class="icon-search"></i></button>
+    <!-- search  -->
+      <form action="/search" method="get" class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" name="search" params="search" class="form-control" placeholder="Search for people">
         </div>
-       </form>
-
-
-
-
-
-
-
-
-
-
-
+      </form>
   </div>
 </nav>
