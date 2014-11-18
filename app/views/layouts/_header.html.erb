@@ -27,11 +27,11 @@
   
   <!-- search -->
  
- <%= form_tag search_path, method: 'get' , class: "navbar-form navbar-left", role: "search" %>
+ <%= form_tag search_path, method: 'get' , :class => "navbar-form navbar-left", role: "search" %>
  <div class="form-group">
-  <%= text_field_tag :search, class: "form-control", params[:search]  %>
+  <%= text_field_tag :search, :class => "form-control", params[:search]  %>
   </div>
-  <%= submit_tag "Search for people", class: "btn btn-default" name: nil %>
+  <%= submit_tag "Search for people", :class => "btn btn-default" name: nil %>
 
 
         
