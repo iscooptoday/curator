@@ -11,7 +11,7 @@
 
 <% else %>
 
-<%= render 'links/_form' %>
+<%= render "links/new" %>
 
   <h3> MY PAGES:</h3>
    <% current_user.topics.order("created_at DESC").each do |l| %>
