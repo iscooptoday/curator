@@ -2,7 +2,8 @@ class PagesController < ApplicationController
 	
   
   def home
-  	@link=Link.all
+  	@link=Link.new
+  	@links=Link.all
   
     end
 
