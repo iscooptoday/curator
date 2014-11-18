@@ -49,7 +49,7 @@
 
 <%# view to show the images uploaded %> 
  <% l.link_attachments.each do |p| %>
-  <p><%= image_tag p.avatar_url,class="img-responsive" %></p>
+  <p><%= image_tag p.avatar_url, class: "img-responsive" %></p>
  <% end %>
  <%# number of likes and impressions %>
  <p style="color:#3498db"><%=l.likers(User).count %> like(s) <B style="color:#7f8c8d"><%= "#{l.impressionist_count} view(s)" %> </B> </p>
