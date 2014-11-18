@@ -22,28 +22,12 @@
 <%= f.fields_for :link_attachments do |p| %>
      <div class="field">
        <%= p.label :Upload_photos %><br>
-       <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]",onchange: "PreviewImage();",id: "uploadImage" %>
+       <%= p.file_field :avatar, :multiple => true, name: "link_attachments[avatar][]", class: "multi with-preview" multiple %>
      </div>
    <% end %>
 
 
-<%# preview the images %> 
 
-<img id="uploadPreview" style="width: 100px; height: 100px;" />
-
-<%# javascript for preview the images %> 
-<script type="text/javascript">
-
-    function PreviewImage() {
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
-
-        oFReader.onload = function (oFREvent) {
-            document.getElementById("uploadPreview").src = oFREvent.target.result;
-        };
-    };
-
-</script>
   
 
 
