@@ -1,5 +1,5 @@
 
-<%= link_to "dont have an account yet? Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %><br><br>
+
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -29,7 +29,7 @@
 
       <div class="form-group">
         <%= f.submit "Sign in", class: "btn btn-primary" %>
-      </div>
+      </div> <%= link_to "dont have an account yet? Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %><br><br>
     <% end %>
   </div>
   <div class="panel-footer">

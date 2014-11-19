@@ -23,17 +23,20 @@
     <%= f.text_field :description, class: "form-control",placeholder:" your page url will be iscoop.co/'username'",:autofocus => true %>
   </div>
 
-  <div class="form-group">
-    <% f.label :Your_Name %>
-    <% f.text_field :author, class: "form-control",placeholder:"People can find your newsletter by the name you enter here",:autofocus => true %>
-  </div>
-
-  
+   
 
   <div class="form-group">
     <%= f.label :Welcome_Message %>
     <%= f.text_field :welcome_message, class: "form-control",placeholder:"This will show up on your newsletter sign-up page",:autofocus => true %>
   </div>
+
+   
+   <%# abandoned fields %>
+   <div class="form-group">
+    <% f.label :Your_Name %>
+    <% f.text_field :author, class: "form-control",placeholder:"People can find your newsletter by the name you enter here",:autofocus => true %>
+  </div>
+
 
   <div class="form-group">
        <% f.label :frequency %>
