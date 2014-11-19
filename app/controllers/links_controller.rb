@@ -5,6 +5,9 @@ class LinksController < ApplicationController
   
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
+  # need to login before doing anything 
+  before_action :authenticate_user!
+
   #shows impressions on the link show page
   impressionist :actions=>[:show]
 
