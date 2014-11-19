@@ -41,7 +41,7 @@ end
     @topic = current_user.topics.build(topic_params)
 
       if @topic.save
-        redirect_to @topic, notice: 'Topic was successfully created.' 
+        redirect_to @topic
         else
         render action: 'new' 
       end
@@ -52,11 +52,11 @@ end
       
       if current_user.follows?(@topic)
         current_user.unfollow!(@topic)
-        redirect_to @topic, notice: 'you are no longer following this newsletter.'
+        redirect_to @topic
         else 
 
       current_user.follow!(@topic)
-       redirect_to @topic, notice: 'you are now following this newsletter.'
+       redirect_to @topic
   end
   end
 

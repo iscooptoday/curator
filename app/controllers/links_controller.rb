@@ -69,7 +69,7 @@ class LinksController < ApplicationController
     :from => from,
     :to => u.nom  ,
 
-    :body => "A new post from #{sender} check it out! http://www.iscoop.co#{url}"
+    :body => "A new post from #{sender} click to check it out! http://www.iscoop.co#{url}"
        )
   
   end
