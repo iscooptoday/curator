@@ -15,7 +15,7 @@ class Topic < ActiveRecord::Base
   def self.search(query)
     query = query.upcase
     # where(:author, query) -> This would return an exact match of the query
-    where("upper(author) like ?", "%#{query}%") 
+    where("upper(description) like ?", "%#{query}%") 
   end
   
 
