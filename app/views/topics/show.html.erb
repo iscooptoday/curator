@@ -1,14 +1,14 @@
 
 
 
-  <div align="center">
+  <%# if dont have any posts yet%>
+<% if current_user.topics.links.blank? %>
 
-  <h4 class="topic-welcome"><%=@topic.welcome_message if @topic.welcome_message %></h4>
-  
-  </div><br><br>
+<P> Cool! now share you url with friends. again its iscoop.co/<%= @topic.description %></P> 
   
   
   
+
   <% if current_user.follows?(@topic) %>  
 
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
