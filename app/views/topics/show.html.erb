@@ -1,5 +1,5 @@
 
-<h3 class="about-message"> <%=@topic.welcome_message if @topic.welcome_message %> </h3>
+<h3 class="about-message"> <%=@topic.welcome_message if @topic.welcome_message %> </h3><br><br><br>
 
 
   
@@ -7,7 +7,7 @@
   <%# if its your site the u can post from here%>
   <% if @topic.user == current_user %>
   <%= link_to "UPLOAD PHOTOS", new_link_path, class: "btn btn-default btn-lg"  %>
-  <% end %><br><br>
+  <% end %><br><br><br>
 
   
 
