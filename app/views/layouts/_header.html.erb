@@ -17,8 +17,9 @@
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
       
+      <li><%= link_to "HOME", root_path %></li>
       <li><%= link_to 'CONTACT US', contact_path %></li>
-      <li><%= link_to "CREATE A PAGE", new_topic_path %></li>
+      <li><%= link_to "CREATE A GROUP", new_topic_path %></li>
       <li><% link_to "LOG OUT", destroy_user_session_path, method: :delete %></li> 
      <% else %>
      <li><%= link_to "SIGN IN", new_user_session_path %></li>
@@ -28,7 +29,7 @@
     <!-- search  -->
       <form action="/search" method="get" class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" name="search" params="search" class="form-control" placeholder="Search for people">
+          <input type="text" name="search" params="search" class="form-control" placeholder="Search by group name">
         </div>
       </form>
   </div>

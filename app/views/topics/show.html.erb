@@ -4,27 +4,29 @@
 
   
 
-  <%# if its your site the u can post from here%>
-  <% if @topic.user == current_user %>
-  <%= link_to "UPLOAD PHOTOS", new_link_path, class: "btn btn-default btn-lg"  %>
+  <%# if you are subscribed to the group%>
+  <% if current_user.follows?(@topic) %> 
+  <%= link_to "Share", new_link_path, class: "btn btn-default btn-lg"  %>
   <% end %><br><br><br>
 
   
 
 
 
-
+  <%# if you are subscribed to the group%>
   <% if current_user.follows?(@topic) %>  
 
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
   
-  <div class = "actions"> <%= f.submit "UnSubscribe", class: "btn btn-primary btn-lg" %> </div>
+  <div class = "actions"> <%= f.submit "Leave Group", class: "btn btn-primary btn-lg" %> </div>
   <% end %> <br> 
      
+   <%# if you not subscribed to the group%>
+
    <% else %>
   
   <%= form_for(@topic, url: topic_path(@topic)) do |f| %>
-  <div class = "actions"> <%= f.submit "Subscribe" ,class: "btn btn-primary btn-lg" %> </div>
+  <div class = "actions"> <%= f.submit "Join" ,class: "btn btn-primary btn-lg" %> </div>
   <% end %> <br>
 
 <% end %> 

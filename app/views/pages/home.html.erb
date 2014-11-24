@@ -7,25 +7,34 @@
 <%# if dont have any newsletter%>
 <% if current_user.topics.blank? %>
 
-<P> YOU HAVENT CREATED A PAGE YET. WHY DONT YOU CREATE ONE START SHARING WITH YOUR FRIENDS</P>
+<P> YOU HAVENT CREATED A GROUP YET. WHY DONT YOU CREATE ONE START STUDYING WITH FRIENDS</P>
 
-<%= link_to "CREATE PAGE", new_topic_path, class: "btn btn-default btn-lg" %>
+<%= link_to "CREATE GROUP", new_topic_path, class: "btn btn-default btn-lg" %>
 
 <% else %>
 
-<%= link_to "UPLOAD PHOTOS", new_link_path, class: "btn btn-default btn-lg" %><br><br><br>
+<%= link_to "SHARE", new_link_path, class: "btn btn-default btn-lg" %><br><br><br>
+
+
+  
+  
+ 
 
 
 
-
-  <h3> MY PAGE(S):</h3>
+  <h3> MY GROUP(S):</h3>
    <% current_user.topics.order("created_at DESC").each do |l| %>
   <P> <%= link_to l.description, topic_path(l) %></P><br><br>
 
 <% end %> 
+
+<h3> groups i joined </h3>
+<% current_user.followees(Topic).each do |t| %>
+<P> <%= link_to t.description, topic_path(t) %></P><br><br>
+
 <% end %> 
                   
-
+<% end %>
     
 
   <% else %>
