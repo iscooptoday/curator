@@ -22,9 +22,7 @@ class LinksController < ApplicationController
       @link = Link.find(params[:id])
       impressionist(@link)
 
-       #show the comment
-      commentable = Link.find(1)
-      comments = commentable.comments.recent.limit(10).all 
+       
   
 
 

@@ -41,7 +41,9 @@
   
   <% end %> <br><br><br><br>
 
-   
+   <%# show the comments %>
+      <%= commentable = Link.find(1)%>
+      <%= comments = commentable.comments.recent.limit(10).all %>
 
 
 
