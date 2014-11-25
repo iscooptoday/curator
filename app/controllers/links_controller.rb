@@ -22,7 +22,9 @@ class LinksController < ApplicationController
       @link = Link.find(params[:id])
       impressionist(@link)
 
-       
+       # show the comments 
+      commentable = Link.find(1)
+      comments = commentable.comments.recent.limit(10).all
   
 
 
@@ -34,6 +36,17 @@ class LinksController < ApplicationController
     @link = Link.new
     @topic=Topic.all 
     @link_attachment = @link.link_attachments.build
+    
+    #create the comment 
+       commentable = Link.create
+       comment = commentable.comments.create
+       comment.title = "First comment."
+       comment.comment = "This is the first comment."
+       comment.save
+
+
+
+
   end
   
 
@@ -53,13 +66,7 @@ class LinksController < ApplicationController
        end
        redirect_to @link, notice: 'post was successfully submitted.' 
        
-        #create the comment 
-       commentable = Link.create
-       comment = commentable.comments.create
-       comment.title = "First comment."
-       comment.comment = "This is the first comment."
-       comment.save
-
+        
 
 
 
