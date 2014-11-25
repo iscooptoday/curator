@@ -21,23 +21,16 @@ class LinksController < ApplicationController
       @link_attachments = @link.link_attachments.all
       @link = Link.find(params[:id])
       impressionist(@link)
+
+       #show the comment
+      commentable = Link.find(1)
+      comments = commentable.comments.recent.limit(10).all 
   
 
-commentable = Link.create
-comment = commentable.comments.create
-comment.title = "First comment."
-comment.comment = "This is the first comment."
-comment.save
 
 
 
-
-
-
-
-
-
-  end
+ end
 
   def new
     @link = Link.new
@@ -61,7 +54,23 @@ comment.save
           @link_attachment = @link.link_attachments.create!(:avatar => a, :link_id => @link.id)
        end
        redirect_to @link, notice: 'post was successfully submitted.' 
-        
+       
+        #create the comment 
+       commentable = Link.create
+       comment = commentable.comments.create
+       comment.title = "First comment."
+       comment.comment = "This is the first comment."
+       comment.save
+
+
+
+
+
+
+
+
+
+
      
 
     # setting up the variables to send text
