@@ -21,6 +21,22 @@ class LinksController < ApplicationController
       @link_attachments = @link.link_attachments.all
       @link = Link.find(params[:id])
       impressionist(@link)
+  
+
+commentable = Link.create
+comment = commentable.comments.create
+comment.title = "First comment."
+comment.comment = "This is the first comment."
+comment.save
+
+
+
+
+
+
+
+
+
   end
 
   def new
