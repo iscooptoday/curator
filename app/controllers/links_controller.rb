@@ -22,12 +22,7 @@ class LinksController < ApplicationController
       @link = Link.find(params[:id])
       impressionist(@link)
 
-       # show the comments 
-      commentable = Link.find(1)
-      comments = commentable.comments.recent.limit(10).all
-  
-
-
+       
 
 
  end
@@ -37,15 +32,7 @@ class LinksController < ApplicationController
     @topic=Topic.all 
     @link_attachment = @link.link_attachments.build
     
-    #create the comment 
-       commentable = Link.create
-       comment = commentable.comments.create
-       comment.title = "First comment."
-       comment.comment = "This is the first comment."
-       comment.save
-
-
-
+    
 
   end
   
@@ -120,11 +107,11 @@ class LinksController < ApplicationController
       
       if current_user.likes?(@link)
         current_user.unlike!(@link)
-        redirect_to @link, notice: 'you have unliked this post.'
+        redirect_to @link
         else 
 
       current_user.like!(@link)
-       redirect_to @link, notice: 'you have liked this post.'
+       redirect_to @link
   end
   end
 

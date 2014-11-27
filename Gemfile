@@ -19,7 +19,7 @@ gem "mini_magick"
 gem 'carrierwave'
 gem 'impressionist'
 gem "jquery-fileupload-rails"
-gem 'acts_as_commentable'
+
 
 
 
